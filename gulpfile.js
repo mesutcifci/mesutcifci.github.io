@@ -37,15 +37,25 @@ gulp.task('imagemin', () => {
 });
 
 
-gulp.task('htmlmin', () => {
+gulp.task('minifyhtml', () => {
+    return gulp.src('./build/html/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./build/html/'))
+})
+
+gulp.task('includeHtml', () => {
     return gulp.src([
         './src/html/*.html',
         '!./src/html/footer.html',
         '!./src/html/head.html',
         '!./src/html/navbar.html'])
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest("./build/html/"))
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./build/html/'))
 })
+
 
 
 
@@ -74,7 +84,6 @@ gulp.task('default', () => {
 
     gulp.watch('./src/js/index.js', gulp.series('javascript'));
 
-    gulp.watch(['./src/html/*.html', '!./src/html/footer.html', '!./src/html/head.html',
-        '!./src/html/navbar.html'], gulp.series('htmlmin'));
+    gulp.watch(['./src/html/*.html'], gulp.series('includeHtml', 'minifyhtml'))
 
 });
