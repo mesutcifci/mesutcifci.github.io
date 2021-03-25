@@ -13,6 +13,7 @@ const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
+const optipng = require('imagemin-optipng');
 
 
 
@@ -31,7 +32,8 @@ gulp.task('style', () => {
 gulp.task('imagemin', () => {
     return gulp.src('./images/*')
         .pipe(imagemin([
-            imagemin.mozjpeg({ quality: 50, progressive: true })
+            imagemin.mozjpeg({ quality: 45, progressive: true }),
+            imagemin.optipng({optimizationLevel: 5})
         ]))
         .pipe(gulp.dest('./images/'))
 });
