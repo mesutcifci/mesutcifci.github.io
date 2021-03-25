@@ -40,9 +40,9 @@ gulp.task('imagemin', () => {
 
 
 gulp.task('minifyhtml', () => {
-    return gulp.src('./build/html/*.html')
+    return gulp.src('./*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('./build/html/'))
+    .pipe(gulp.dest('./'))
 })
 
 gulp.task('includeHtml', () => {
@@ -54,21 +54,8 @@ gulp.task('includeHtml', () => {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('./build/html/'))
+        .pipe(gulp.dest('./'))
 })
-
-
-
-
-gulp.task('javascript', () => {
-    return gulp.src('./src/js/index.js')
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./build/js/'))
-})
-
-
 
 gulp.task('scss', () => {
     return gulp.src("./scss/**/*.scss")
@@ -82,8 +69,6 @@ gulp.task('default', () => {
 
     gulp.watch('./scss/**/*/*.scss', gulp.series('scss'))
     gulp.watch('./src/css/*.css', gulp.series('style'));
-
-    gulp.watch('./src/js/index.js', gulp.series('javascript'));
 
     gulp.watch(['./src/html/*.html'], gulp.series('includeHtml', 'minifyhtml'))
 
