@@ -1,3 +1,118 @@
-html {
+/* ANIMATION */
+
+@keyframes text-shadow {
+  0% {
+    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+  }
+  20% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
+  }
+  40% {
+    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+  }
+  60% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
+  }
+  80% {
+    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
+  }
+}
+
+@keyframes box-shadow {
+  0% {
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
+  }
+  20% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 20px #001aff;
+  }
+  40% {
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
+  }
+  60% {
+    box-shadow: 0 0 5px #fff, 0 0 25px #001aff, 0 0 25px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff;
+  }
+  80% {
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff;
+  }
+}
+
+/* GLOBAL */
+
+body {
+  background: rgb(0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-center {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NAVBAR */
+
+.navbar {
+  justify-content: space-between;
+  font-family: 'Niconne', cursive;
+  padding: 50px 20px 20px 20px;
+}
+
+.navbar__item-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.navbar__item {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-size: 35px;
+  transition: transform linear 200ms;
+}
+
+.navbar__item:nth-child(2) {
+  margin-left: 8px;
+  margin-right: 8px
+}
+
+/* İndex.html */
+
+.welcome {
+  margin-top: 30px;
+  min-height: 50vh;
+}
+
+.welcome__header {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  animation: 4s linear 0s infinite alternate box-shadow;
+}
+
+.welcome__heading {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: calc(20px + 7vw);
+  font-weight: 300;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  animation: 2s linear 0s infinite alternate text-shadow;
+}
+
+/* MEDIA */
+
+@media(min-width:1024px) {
+  .navbar__item:hover {
+    transform: scale(1.25);
+    color: rgb(255, 95, 95);
+    text-decoration: underline;
+  }
 }

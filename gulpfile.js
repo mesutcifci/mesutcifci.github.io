@@ -21,7 +21,7 @@ gulp.task('style', () => {
         autoprefixer({ cascade: false }),
         cssnano()
     ];
-    return gulp.src('./src/css/main.css')
+    return gulp.src('./src/css/*.css')
         .pipe(postcss(plugins))
         .pipe(gulp.dest('./build/css/'))
 })
@@ -46,7 +46,6 @@ gulp.task('minifyhtml', () => {
 gulp.task('includeHtml', () => {
     return gulp.src([
         './src/html/*.html',
-        '!./src/html/footer.html',
         '!./src/html/head.html',
         '!./src/html/navbar.html'])
         .pipe(fileInclude({
@@ -80,7 +79,7 @@ gulp.task('scss', () => {
 gulp.task('default', () => {
 
     gulp.watch('./scss/**/*/*.scss', gulp.series('scss'))
-    gulp.watch('./src/css/main.css', gulp.series('style'));
+    gulp.watch('./src/css/*.css', gulp.series('style'));
 
     gulp.watch('./src/js/index.js', gulp.series('javascript'));
 
