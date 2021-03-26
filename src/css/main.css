@@ -2,47 +2,23 @@
 
 :root {
   --soft-red: rgb(255, 95, 95);
-  --font-primary: 'Niconne', cursive;
-  --font-secondary: 'Lato', sans-serif;
+  --font-primary: 'Roboto', 'sans-serif';
+  --font-secondary: 'Niconne', cursive;
 }
 
 /* ANIMATION */
 
 @keyframes text-shadow {
   0% {
-    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
-  }
-  20% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
-  }
-  40% {
-    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
-  }
-  60% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
-  }
-  80% {
-    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+    text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 5px rgb(255, 0, 0), 0 0 5px rgb(255, 0, 0), 0 0 5px rgb(255, 0, 0);
   }
   100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff, 0 0 10px #001aff;
+    text-shadow: 0 0 5px #fff, 0 0 5px #001aff, 0 0 5px #001aff, 0 0 5px #001aff, 0 0 5px #001aff, 0 0 5px #001aff;
   }
-}
+} 
 
 @keyframes box-shadow {
   0% {
-    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
-  }
-  20% {
-    box-shadow: 0 0 5px #fff, 0 0 10px #001aff, 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 20px #001aff;
-  }
-  40% {
-    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
-  }
-  60% {
-    box-shadow: 0 0 5px #fff, 0 0 25px #001aff, 0 0 25px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff, inset 0 0 10px #001aff;
-  }
-  80% {
     box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0), inset 0 0 10px rgb(255, 0, 0);
   }
   100% {
@@ -54,6 +30,8 @@
 
 body {
   background: rgb(0, 0, 0);
+  font-family: var(--font-primary);
+  font-weight: 400;
 }
 
 a {
@@ -70,7 +48,7 @@ a {
 
 .navbar {
   justify-content: space-between;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   padding: 50px 20px 20px 20px;
 }
 
@@ -94,25 +72,27 @@ a {
 /* İndex.html */
 
 .welcome {
-  margin-top: 30px;
-  min-height: 50vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .welcome__header {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
-  animation: 4s linear 0s infinite alternate box-shadow;
+  animation: 3s linear 0s infinite alternate box-shadow;
 }
 
 .welcome__heading {
   color: rgb(255, 255, 255);
-  font-family: var(--font-secondary);
-  font-size: calc(20px + 7vw);
-  font-weight: 300;
+  font-family: var(--font-primary);
+  font-size: calc(20px + 6vw);
+  font-weight: 400;
   margin-left: 15px;
   margin-right: 15px;
   text-align: center;
-  animation: 2s linear 0s infinite alternate text-shadow;
+  animation: 3s linear 0s infinite alternate text-shadow;
 }
 
 /* Projects.html*/
@@ -270,9 +250,11 @@ a {
     color: white;
   }
   .about__social-icon {
+    transition: all 200ms linear;
     width: 25px;
   }
   .about__social-icon:hover {
     color: var(--soft-red);
+    transform: scale(2);
   }
 }
