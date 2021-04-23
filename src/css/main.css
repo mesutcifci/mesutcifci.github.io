@@ -54,10 +54,11 @@ a {
 
 .about {
   flex-direction: column;
+  flex-grow: 1;
   margin-top: 50px;
+  padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  flex-grow: 1;
 }
 
 .profile {
@@ -237,5 +238,8 @@ a {
   .about__social-icon:hover {
     color: var(--soft-red);
     transform: scale(2);
+  }
+  #medium:hover path{
+    fill: var(--soft-red);
   }
 }
