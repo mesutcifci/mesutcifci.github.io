@@ -1,107 +1,142 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     @@include('./head.html')
     <title>Home</title>
 
     <style>
-        html,
-        body {
-            min-height: 100%;
-        }
+      html,
+      body {
+        min-height: 100%;
+      }
 
-        body {
-            display: flex;
-            flex-direction: column;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     @@include('./navbar.html')
     <!-- Main Start -->
     <main class="flex-center about">
+      <div class="about__brief">
+        <header class="about__header">
+          <h1 class="about__heading">Who Am I?</h1>
+        </header>
 
-        <div class="about__brief">
+        <p class="about__text">
+          Hello, I am Mesut Çifci, I have been working as a frontend developer
+          for a year. Every day I learn something new and try to improve myself.
+        </p>
+      </div>
 
-            <header class="about__header">
-                <h1 class="about__heading">Who Am I?</h1>
-            </header>
+      <div class="flex-center profile">
+        <figure class="profile__image-container">
+          <img src="./images/profile.jpg" alt="" class="profile__image" />
+        </figure>
 
-            <p class="about__text">Hello, I am Mesut Çifci, I have been working as a frontend developer
-                for 1 year. Everyday I learn something new and try to improve myself.
-            </p>
+        <div class="about__social">
+          <!-- Linkedin -->
+          <a
+            href="https://www.linkedin.com/in/mesut-cifci/"
+            class="about__social-link"
+          >
+            <svg
+              class="about__social-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+              />
+            </svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/MesutCifci9" class="about__social-link">
+            <svg
+              class="about__social-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+              />
+            </svg>
+          </a>
+
+          <!-- Github -->
+          <a href="https://github.com/mesutcifci" class="about__social-link">
+            <svg
+              class="about__social-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-github"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+          </a>
+
+          <!-- Stackoverflow -->
+          <a
+            href="https://stackoverflow.com/users/12382831/mesut-%c3%87ifci"
+            class="about__social-link"
+          >
+            <svg
+              class="about__social-icon about__social-icon--stack"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              viewBox="0 0 640 640"
+            >
+              <path
+                d="M640 400.009V640H0V400.009h79.997v159.994h480.006V400.009H640zm-519.999 40.004h399.997v79.997L120.001 520v-79.986zm9.484-86.623l17.316-78.107 390.524 86.564-17.327 78.12-390.513-86.577zm45.32-160.549l33.803-72.52 362.52 169.03-33.803 72.532-362.52-169.04zm445.033 33.083l-48.721 63.474L253.75 45.875 288.948 0h36.414l294.476 225.924z"
+              />
+            </svg>
+          </a>
+
+          <!--Medium-->
+          <a href="https://mesutcifci.medium.com/" class="about__social-link">
+            <svg
+              id="medium"
+              class="about__social-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1333.34 1333.34"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="currentColor"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M0 1333.34h1333.34V0H0v1333.34zm325.02-887.42a34.71 34.71 0 00-11.28-29.26L230.1 315.9v-15.05h259.69l200.72 440.21 176.47-440.21h247.56v15.05l-71.5 68.56a20.89 20.89 0 00-7.94 20.07v503.75a20.903 20.903 0 007.94 20.07l69.83 68.56v15.05H761.61v-15.05l72.35-70.23c7.11-7.11 7.11-9.2 7.11-20.07V499.43l-201.15 510.86h-27.18L378.56 499.43v342.38a47.254 47.254 0 0012.96 39.3l94.09 114.13v15.05h-266.8v-15.05l94.09-114.13a45.594 45.594 0 0012.13-39.3V445.92z"
+                fill="#ffff"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </a>
         </div>
-
-        <div class="flex-center profile">
-
-            <figure class="profile__image-container">
-                <img src="./images/profile.jpg" alt="" class="profile__image">
-            </figure>
-
-            <div class="about__social">
-
-                <!-- Linkedin -->
-                <a href="https://www.linkedin.com/in/mesut-cifci/" class="about__social-link">
-                    <svg class="about__social-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                    </svg>
-                </a>
-
-
-                <!-- Twitter -->
-                <a href="https://twitter.com/MesutCifci9" class="about__social-link">
-                    <svg class="about__social-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                    </svg>
-                </a>
-
-
-
-                <!-- Github -->
-                <a href="https://github.com/mesutcifci" class="about__social-link">
-                    <svg class="about__social-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                    </svg>
-                </a>
-
-
-                <!-- Stackoverflow -->
-                <a href="https://stackoverflow.com/users/12382831/mesut-%c3%87ifci" class="about__social-link">
-                    <svg class="about__social-icon about__social-icon--stack" xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                        image-rendering="optimizeQuality" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                        viewBox="0 0 640 640">
-                        <path
-                            d="M640 400.009V640H0V400.009h79.997v159.994h480.006V400.009H640zm-519.999 40.004h399.997v79.997L120.001 520v-79.986zm9.484-86.623l17.316-78.107 390.524 86.564-17.327 78.12-390.513-86.577zm45.32-160.549l33.803-72.52 362.52 169.03-33.803 72.532-362.52-169.04zm445.033 33.083l-48.721 63.474L253.75 45.875 288.948 0h36.414l294.476 225.924z" />
-                    </svg>
-                </a>
-
-                <!--Medium-->
-                <a href="https://mesutcifci.medium.com/" class="about__social-link">
-                    <svg id="medium" class="about__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.34 1333.34"
-                        shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                        image-rendering="optimizeQuality" fill-rule="currentColor" clip-rule="evenodd">
-                        <path
-                            d="M0 1333.34h1333.34V0H0v1333.34zm325.02-887.42a34.71 34.71 0 00-11.28-29.26L230.1 315.9v-15.05h259.69l200.72 440.21 176.47-440.21h247.56v15.05l-71.5 68.56a20.89 20.89 0 00-7.94 20.07v503.75a20.903 20.903 0 007.94 20.07l69.83 68.56v15.05H761.61v-15.05l72.35-70.23c7.11-7.11 7.11-9.2 7.11-20.07V499.43l-201.15 510.86h-27.18L378.56 499.43v342.38a47.254 47.254 0 0012.96 39.3l94.09 114.13v15.05h-266.8v-15.05l94.09-114.13a45.594 45.594 0 0012.13-39.3V445.92z"
-                            fill="#ffff" fill-rule="nonzero" />
-                    </svg>
-                </a>
-
-            </div>
-
-        </div>
-
+      </div>
     </main>
     <!-- Main Start -->
-</body>
-
+  </body>
 </html>

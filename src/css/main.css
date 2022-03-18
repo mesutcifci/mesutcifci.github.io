@@ -2,12 +2,14 @@
 
 :root {
   --soft-red: rgb(255, 95, 95);
-  --font-primary: 'Lato', 'sans-serif';
+  --font-primary: "Lato", "sans-serif";
 }
 
 /* GLOBAL */
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
 }
@@ -72,7 +74,7 @@ a {
   width: max-content;
 }
 
-.profile__image { 
+.profile__image {
   border-radius: 100%;
   object-fit: cover;
   width: 120px;
@@ -189,7 +191,7 @@ a {
 
 /* MEDIA */
 
-@media(min-width: 671px) {
+@media (min-width: 671px) {
   .projects-main {
     box-sizing: border-box;
     margin-left: auto;
@@ -205,8 +207,7 @@ a {
   }
 }
 
-
-@media(min-width:1024px) {
+@media (min-width: 1024px) {
   .navbar__item:hover {
     transform: scale(1.25);
     color: rgb(255, 95, 95);
@@ -239,7 +240,7 @@ a {
     color: var(--soft-red);
     transform: scale(2);
   }
-  #medium:hover path{
+  #medium:hover path {
     fill: var(--soft-red);
   }
 }
