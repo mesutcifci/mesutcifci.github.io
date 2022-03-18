@@ -1,52 +1,53 @@
-const gulp = require('gulp');
+import pkg from 'gulp';
+const { task, src, dest, watch, series } = pkg;
 
-const fileInclude = require('gulp-file-include');
+import fileInclude from 'gulp-file-include';
 
-const postcss = require('gulp-postcss')
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
+import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 
-const uglify = require('gulp-uglify');
-const htmlmin = require('gulp-htmlmin');
-const imagemin = require('gulp-imagemin');
-const mozjpeg = require('imagemin-mozjpeg');
-const optipng = require('imagemin-optipng');
+import uglify from 'gulp-uglify';
+import htmlmin from 'gulp-htmlmin';
+import imagemin, { mozjpeg as _mozjpeg, optipng as _optipng } from 'gulp-imagemin';
+import mozjpeg from 'imagemin-mozjpeg';
+import optipng from 'imagemin-optipng';
 
 
 
-gulp.task('style', () => {
+task('style', () => {
     const plugins = [
         autoprefixer({ cascade: false }),
         cssnano()
     ];
-    return gulp.src('./src/css/*.css')
+    return src('./src/css/*.css')
         .pipe(postcss(plugins))
-        .pipe(gulp.dest('./build/css/'))
+        .pipe(dest('./build/css/'))
 })
 
 
 
-gulp.task('imagemin', () => {
-    return gulp.src('./images/*')
+task('imagemin', () => {
+    return src('./images/*')
         .pipe(imagemin([
-            imagemin.mozjpeg({ quality: 45, progressive: true }),
-            imagemin.optipng({optimizationLevel: 5})
+            _mozjpeg({ quality: 45, progressive: true }),
+            _optipng({optimizationLevel: 5})
         ]))
-        .pipe(gulp.dest('./images/'))
+        .pipe(dest('./images/'))
 });
 
 
-gulp.task('minifyhtml', () => {
-    return gulp.src('./*.html')
+task('minifyhtml', () => {
+    return src('./*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('./'))
+    .pipe(dest('./'))
 })
 
-gulp.task('includeHtml', () => {
-    return gulp.src([
+task('includeHtml', () => {
+    return src([
         './src/html/*.html',
         '!./src/html/head.html',
         '!./src/html/navbar.html'])
@@ -54,22 +55,22 @@ gulp.task('includeHtml', () => {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('./'))
+        .pipe(dest('./'))
 })
 
-gulp.task('scss', () => {
-    return gulp.src("./scss/**/*.scss")
+task('scss', () => {
+    return src("./scss/**/*.scss")
         .pipe(sass({ outputStyle: 'expanded' }))
-        .pipe(gulp.dest("./src/css/"))
+        .pipe(dest("./src/css/"))
 });
 
 
 
-gulp.task('default', () => {
+task('default', () => {
 
-    gulp.watch('./scss/**/*/*.scss', gulp.series('scss'))
-    gulp.watch('./src/css/*.css', gulp.series('style'));
+    watch('./scss/**/*/*.scss', series('scss'))
+    watch('./src/css/*.css', series('style'));
 
-    gulp.watch(['./src/html/*.html'], gulp.series('includeHtml', 'minifyhtml'))
+    watch(['./src/html/*.html'], series('includeHtml', 'minifyhtml'))
 
 });
