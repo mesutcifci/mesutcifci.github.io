@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const AboutMe = styled.div`
-height: 100vh;
+min-height: 100vh;
+height: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: #45567d
+background-color: #45567d;
 `
 export const ProfileFigure = styled.figure`
 display: grid;

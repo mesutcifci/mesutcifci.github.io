@@ -4,16 +4,27 @@ export const PageContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 100px
+padding: 120px 20px 40px 20px;
 `;
 export const GridContainer = styled.div`
 display: grid;
+margin: 15px;
+
+@media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 1030px) {
+    grid-template-columns: repeat(3, 1fr);
+}
+`;
+
+export const Card = styled.div`
 border: 3px solid white;
 padding: 0;
 border-radius: 10px;
-min-width: 250px;
-max-width: 300px;
 margin: 15px;
+
 `;
 export const Img = styled.img`
 width: 300px;
@@ -22,35 +33,46 @@ object-fit: cover;
 border-top-right-radius: 10px;
 border-top-left-radius: 10px;
 `;
-export const Figcaption = styled.figcaption`
+export const Title = styled.p`
 color: white;
 background-color: rgb(45, 38, 38);
 text-align: center;
 box-sizing: border-box;
-height: 40px;
-line-height: 36px;
+height: 50px;
+width: 300px;
+margin: -10px 0 0 0;
+padding: 0 10px 0 10px;
+line-height: 50px;
 font-weight: bold;
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis;
 `;
 export const LinkContainer = styled.div`
-display: grid;
-grid-template-columns: repeat(2, auto);
+display: flex;
+width: 300px;
 height: 60px;
 `;
-export const ProjectPreviewLink = styled.a`
+export const PreviewAndMediumLink = styled.a`
 color: white;
 text-decoration: none;
 background-color: rgb(174, 34, 34);
 text-align: center;
-padding-top: 14px;
 border-bottom-left-radius: 10px;
+line-height: 50px;
+width: 50%;
+height: 100%;
+
 `;
 export const ProjectCodeLink = styled.a`
 text-decoration: none;
 color: white;
 background-color: #131215;
 text-align: center;
-padding-top: 14px;
 border-bottom-right-radius: 10px;
+line-height: 50px;
+width: 50%;
+height: 100%;
 `;
 
 export const ContentHoverText = styled.a`
@@ -60,6 +82,7 @@ background-color: #131215;
 text-align: center;
 padding-top: 14px;
 border-bottom-right-radius: 10px;
+width: 50%;
 
 &:hover {
     cursor: help;

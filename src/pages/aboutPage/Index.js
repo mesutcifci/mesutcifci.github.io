@@ -1,6 +1,6 @@
 import React from "react";
 import { contactConstants } from "./contactConstants";
-import {AboutMe, ProfileFigure, ProfileImg, ProfileP, ContactPart, ContactLink} from "./AboutStyles"
+import {AboutMe, ProfileFigure, ProfileImg, ProfileP, ContactPart, ContactLink} from "./style"
 
 const AboutPage = () => {
 

@@ -1,9 +1,9 @@
-import MainPage from "./Components/MainPage/Index";
-import AboutPage from "./Components/About/Index";
-import ProjectPage from "./Components/Project/Index";
-import ArticlePage from "./Components/Article/Index";
-import "./App.css";
-import Navbar from "./Components/Navbar/Index";
+import MainPage from "./pages/mainPage/Index";
+import AboutPage from "./pages/aboutPage/Index";
+import ProjectPage from "./pages/projectPage/Index";
+import ArticlePage from "./pages/articlePage/Index";
+import "./styles/App.css";
+import Navbar from "./components/Navigation/Index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

@@ -2,7 +2,7 @@ import React from "react";
 import {
   IconContainer,
   NavbarIcon,
-} from "./NavbarStyles";
+} from "./style";
 
 const NavbarAnimatedIcon = () => {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
-import {MainPageContainer, WelcomeContainer, MainPageH1, MainPageP } from "./MainPageStyles"
-import AboutPage from "../About/Index";
+import {MainPageContainer, WelcomeContainer, MainPageH1, MainPageP } from "./style"
 const MainPage = () => {
 
   return (
