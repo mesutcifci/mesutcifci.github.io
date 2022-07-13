@@ -11,14 +11,21 @@ import {
   Card
 } from "../../styles/styles";
 import SearchInput from "../../components/SearchInput/index"
-import Button from "../../components/Button/index"
+import ButtonRenderer from "../../components/ButtonRenderer/index"
+import { buttonConstant } from "../../components/ButtonRenderer/buttonConstants";
+
 
 const ProjectPage = (filteredProjectConstant) => {
+
+  function clickTechnologyButton(event) {
+    event.target.classList.toggle("selected");
+    let technologyName = event.target.id;
+  }
 
   return (  
     <PageContainer>
       <SearchInput/>
-      <Button/>
+      <ButtonRenderer buttonData={buttonConstant} handleClickButton={clickTechnologyButton}/>
 
       <GridContainer>
         {projectConstant.map((object) => {
