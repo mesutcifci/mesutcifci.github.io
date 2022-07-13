@@ -6,6 +6,7 @@ flex-direction: column;
 align-items: center;
 padding: 120px 20px 40px 20px;
 `;
+
 export const GridContainer = styled.div`
 display: grid;
 margin: 15px;
@@ -24,11 +25,10 @@ border: 3px solid white;
 padding: 0;
 border-radius: 10px;
 margin: 15px;
-
 `;
 export const Img = styled.img`
-width: 300px;
-height: 224px;
+width: 280px;
+height: 200px;
 object-fit: cover;
 border-top-right-radius: 10px;
 border-top-left-radius: 10px;
@@ -39,7 +39,7 @@ background-color: rgb(45, 38, 38);
 text-align: center;
 box-sizing: border-box;
 height: 50px;
-width: 300px;
+width: 280px;
 margin: -10px 0 0 0;
 padding: 0 10px 0 10px;
 line-height: 50px;
@@ -50,8 +50,8 @@ text-overflow: ellipsis;
 `;
 export const LinkContainer = styled.div`
 display: flex;
-width: 300px;
-height: 60px;
+width: 280px;
+height: 55px;
 `;
 export const PreviewAndMediumLink = styled.a`
 color: white;

@@ -10,10 +10,16 @@ import {
   ProjectCodeLink,
   Card
 } from "../../styles/styles";
+import SearchInput from "../../components/SearchInput/index"
+import Button from "../../components/Button/index"
 
-const ProjectPage = () => {
-  return (
+const ProjectPage = (filteredProjectConstant) => {
+
+  return (  
     <PageContainer>
+      <SearchInput/>
+      <Button/>
+
       <GridContainer>
         {projectConstant.map((object) => {
           return (

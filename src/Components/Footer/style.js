@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
-  border-top: 3px solid #be3144;;
+  border-top: 3px solid #be3144;
   height: 10vh;
   color: white;
   box-sizing: border-box;
@@ -11,9 +11,10 @@ export const Wrapper = styled.footer`
 `;
 
 export const Link = styled.a`
-  height: 30vh;
-    color: white;
-    text-decoration: none;
+  line-height: 50px;
+  color: white;
+  text-decoration: none;
+
   &:hover {
     cursor: help;
   }
