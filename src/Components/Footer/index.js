@@ -1,5 +1,5 @@
 import React from "react";
-import {Wrapper, Link} from "./style"
+import {Wrapper, Link} from "./styles"
 
 const Footer = () => {
     return (

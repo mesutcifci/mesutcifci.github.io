@@ -1,33 +1,57 @@
-import React from "react";
-import { articleConstant } from "./articleConstant";
+import React, { useState } from "react";
+import { articleConstant } from "../../Constants/articleConstant";
 import {
   PageContainer,
   GridContainer,
-  Img,
   Title,
   LinkContainer,
   PreviewAndMediumLink,
   ContentHoverText,
   Card,
+  Img,
 } from "../../styles/styles";
+import Details from "./ArticlesDetail";
+// import { AnimatePresence, layout } from "framer-motion";
+import { Close, IconAngImg } from "./styles";
 
 const ArticlePage = () => {
+  const modifiedArticle = [...articleConstant];
+  const [articleConstantState, setArticleConstantState] = useState([
+    ...articleConstant,
+  ]);
+
+  const isSelectedTrue = (event) => {
+    modifiedArticle.forEach((articleKnowledge) => {
+      if (articleKnowledge.id == event.target.id) {
+        console.log("event.target.id: ", event.target.id);
+        articleKnowledge.selected = !articleKnowledge.selected;
+      }
+      setArticleConstantState(modifiedArticle);
+    });
+  };
+
   return (
     <PageContainer>
-      <GridContainer>
-        {articleConstant.map((object) => {
+      <GridContainer layout>
+        {articleConstant.map((article) => {
           return (
-            <Card key={object.title}>
-              <Img src={object.imgLink} alt="" />
-              <Title>{object.title}</Title>
-              <LinkContainer>
-                <PreviewAndMediumLink href={object.mediumLink} target="_blank">
-                  Medium
-                </PreviewAndMediumLink>
-                <ContentHoverText title={object.explanation}>
-                  Content
-                </ContentHoverText>
-              </LinkContainer>
+            <Card layout key={article.title}>
+              <Img src={article.imgLink} alt="" />
+              <Title>{article.title}</Title>
+              {!article.selected && (
+                <LinkContainer>
+                  <PreviewAndMediumLink
+                    href={article.mediumLink}
+                    target="_blank"
+                  >
+                    Medium
+                  </PreviewAndMediumLink>
+                  <ContentHoverText onClick={isSelectedTrue} id={article.id}>
+                    Content
+                  </ContentHoverText>
+                </LinkContainer>
+              )}
+              {article.selected && <Details handleClickButton={isSelectedTrue}  articleID={article.id} />}
             </Card>
           );
         })}

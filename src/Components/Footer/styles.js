@@ -16,6 +16,6 @@ export const Link = styled.a`
   text-decoration: none;
 
   &:hover {
-    cursor: help;
+    cursor: pointer;
   }
 `;

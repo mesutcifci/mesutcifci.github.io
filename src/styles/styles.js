@@ -1,16 +1,20 @@
 import styled from "styled-components";
+import {motion} from "framer-motion"
 
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 120px 20px 40px 20px;
+  min-height: 100vh;
 `;
 
 export const GridContainer = styled.div`
   display: grid;
   margin: 15px;
-
+  justify-content: center;
+  align-items: center;
+  
   @media (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -42,7 +46,7 @@ export const Title = styled.p`
   width: 280px;
   margin: -10px 0 0 0;
   padding: 0 10px 0 10px;
-  line-height: 50px;
+  line-height: 60px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -56,8 +60,10 @@ export const LinkContainer = styled.div`
 export const PreviewAndMediumLink = styled.a`
   color: white;
   text-decoration: none;
-  background-color: rgb(174, 34, 34);
+  background-color: #be3144;
+  font-weight: bold;
   text-align: center;
+  font-size: 16px;
   border-bottom-left-radius: 10px;
   line-height: 50px;
   width: 50%;
@@ -67,6 +73,8 @@ export const ProjectCodeLink = styled.a`
   text-decoration: none;
   color: white;
   background-color: #131215;
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
   border-bottom-right-radius: 10px;
   line-height: 50px;
@@ -74,48 +82,36 @@ export const ProjectCodeLink = styled.a`
   height: 100%;
 `;
 
-export const ContentHoverText = styled.a`
+export const ContentHoverText = styled(motion.a)`
   text-decoration: none;
   color: white;
   background-color: #131215;
+  font-weight: bold;
+  font-size: 16px;
   text-align: center;
-  padding-top: 14px;
   border-bottom-right-radius: 10px;
   width: 50%;
-
+  height: 100%;
+  line-height: 50px;
   &:hover {
-    cursor: help;
+    cursor: pointer;
   }
 `;
 
 export const H2 = styled.h2`
   font-size: 20px;
 `;
-export const learn = styled.div`
-   {
-    font-family: Calibri, Arial, sans-serif;
-    font-size: 20px;
-    width: 500px;
-  }
-`;
-
-export const learnA = styled.a`
-   {
-    text-decoration: none;
-    color: #000;
-  }
-`;
 
 export const TechnologyButton = styled.button`
   color: white;
-  background-color: ${(className) =>
-    className == "selected" ? "#be3144" : "#45567d"};
+  background-color: ${(prop) =>
+    prop.selected ? "#be3144" : "#45567d"};
   border: 2px solid white;
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
   &:hover {
-    background-color: #be3144;
+    background-color: rgb(45, 38, 38);
     cursor: pointer;
   }
 `;

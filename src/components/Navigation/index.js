@@ -5,9 +5,9 @@ import {
   NavbarUl,
   NavbarLi,
   NavbarLink
-} from "./style";
+} from "./styles";
 import NavbarAnimatedIcon from "./NavbarIcon";
-import { navbarConstants } from "./navbarConstants";
+import { navbarConstants } from "../../Constants/navbarConstants";
 
 const NavbarPart = () => {
   return (

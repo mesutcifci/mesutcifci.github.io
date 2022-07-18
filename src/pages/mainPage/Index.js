@@ -1,7 +1,13 @@
 import React from "react";
-import {MainPageContainer, WelcomeContainer, MainPageH1, MainPageP } from "./style"
-const MainPage = () => {
+import {
+  MainPageContainer,
+  WelcomeContainer,
+  MainPageH1,
+  MainPageP,
+} from "./styles";
+import AboutPage from "../AboutPage/Index";
 
+const MainPage = () => {
   return (
     <>
       <MainPageContainer>
@@ -11,6 +17,7 @@ const MainPage = () => {
           <MainPageP>a front-end developer</MainPageP>
         </WelcomeContainer>
       </MainPageContainer>
+      <AboutPage />
     </>
   );
 };

@@ -5,7 +5,7 @@ export const projectConstant = [
     previewLink:
       "https://mesutcifci.github.io/restaurant-site-with-bootstrap5/build/index.html#",
     codeLink: "https://github.com/mesutcifci/restaurant-site-with-bootstrap5",
-    technologies: ["javascript", "react"],
+    technologies: ["react"],
   },
   {
     title: "AJAX Example With Numbers API",
@@ -93,7 +93,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/four-card-feature-section-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/four-card-feature-section-master",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Coding Bootcamp Testimonials Slider",
@@ -102,7 +102,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/coding-bootcamp-testimonials-slider-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/coding-bootcamp-testimonials-slider-master",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "FAQ Accordion Card",
@@ -111,7 +111,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/faq-accordion-card-main/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/faq-accordion-card-main",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Base Apparel Coming Soon Page",
@@ -155,7 +155,7 @@ export const projectConstant = [
     previewLink:
       "https://mesutcifci.github.io/google-homepage-clone/index.html",
     codeLink: "https://github.com/mesutcifci/google-homepage-clone",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Article Preview Component",
@@ -164,7 +164,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/article-preview-component-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/article-preview-component-master",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Profile Card Component",
@@ -173,6 +173,6 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/profile-card-component-main/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/profile-card-component-main",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
 ];

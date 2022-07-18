@@ -1,4 +1,4 @@
-import {searchContainer, Input, } from "./style"
+import {searchContainer, Input } from "./styles"
 
 const SearchInput = () => {
 

@@ -1,11 +1,9 @@
 import { click } from "@testing-library/user-event/dist/click";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { TechnologyButton } from "../../styles/styles";
-import { ButtonContainer } from "./style";
+import { ButtonContainer } from "./styles";
 
 const ButtonRenderer = ({ buttonData, handleClickButton }) => {
-  const [technologySearch, setTechnologySearch] = useState([]);
-
   return (
     <ButtonContainer>
       {buttonData.map((data) => {
@@ -14,6 +12,7 @@ const ButtonRenderer = ({ buttonData, handleClickButton }) => {
             key={data.id}
             id={data.id}
             onClick={handleClickButton}
+            selected={data.selected}
           >
             {data.title}
           </TechnologyButton>
