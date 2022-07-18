@@ -21,14 +21,16 @@ const ArticlePage = () => {
   ]);
 
   const isSelectedTrue = (event) => {
+    console.log("event: ", event.target);
+
     modifiedArticle.forEach((articleKnowledge) => {
       if (articleKnowledge.id == event.target.id) {
-        console.log("event.target.id: ", event.target.id);
         articleKnowledge.selected = !articleKnowledge.selected;
       }
       setArticleConstantState(modifiedArticle);
     });
   };
+
 
   return (
     <PageContainer>
@@ -44,14 +46,19 @@ const ArticlePage = () => {
                     href={article.mediumLink}
                     target="_blank"
                   >
-                    Medium
+                    Go to Medium
                   </PreviewAndMediumLink>
                   <ContentHoverText onClick={isSelectedTrue} id={article.id}>
-                    Content
+                    Detail
                   </ContentHoverText>
                 </LinkContainer>
               )}
-              {article.selected && <Details handleClickButton={isSelectedTrue}  articleID={article.id} />}
+              {article.selected && (
+                <Details
+                  handleClickButton={isSelectedTrue}
+                  articleID={article.id}
+                />
+              )}
             </Card>
           );
         })}

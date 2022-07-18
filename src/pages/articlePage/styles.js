@@ -33,5 +33,7 @@ export const DetailsAndCloseIcon = styled.div`
   box-sizing: border-box;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-
+  :hover{
+    cursor: pointer;
+  }
 `;

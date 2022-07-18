@@ -85,6 +85,7 @@ const ProjectPage = () => {
     <PageContainer>
       {/* <GoDown /> */}
       <ButtonRenderer
+        propsName={"addGrid"}
         buttonData={buttonConstant}
         handleClickButton={changeSelectedKeyOfButton}
       />
@@ -113,7 +114,8 @@ const ProjectPage = () => {
             According to your selections, {filteredProjectConstants.length}{" "}
             projects were found.
           </p>
-          <ButtonRenderer withoutGrid
+          <ButtonRenderer
+            propsName={"withoutGrid"}
             buttonData={projectButtonConstant}
             handleClickButton={clearChosenButton}
           />

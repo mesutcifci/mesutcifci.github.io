@@ -4,10 +4,10 @@ import { articleConstant } from "../../Constants/articleConstant";
 import { Div, Close, DetailsAndCloseIcon } from "./styles";
 
 const Details = ({ articleID, handleClickButton }) => {
+
   let selectedArticle = articleConstant.filter((article) => {
     return article.id == articleID;
   });
-
   return (
     <DetailsAndCloseIcon
       layout
@@ -15,8 +15,8 @@ const Details = ({ articleID, handleClickButton }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Close id={selectedArticle[0].id} onClick={handleClickButton}>
-        <svg
+      <Close onClick={handleClickButton} id={`${selectedArticle[0].id}`}>
+        <svg id={`${selectedArticle[0].id}`}
           width={14}
           fill={"white"}
           xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,7 @@ export const articleConstant = [
     {
         id: "0",
         title:"My React Notes — 1",
-        explanation: "Why React, imperative/declarative programing, SPA, components, JSX, wrapper element in React",
+        explanation: "Why React, imperative and declarative programing, SPA, components, JSX, wrapper element in React",
         imgLink: "https://miro.medium.com/max/1400/0*KzXdOULBfGpGUktu",
         mediumLink: "https://mesutcifci.medium.com/react-notlar%C4%B1m-1-664d4e052390",
         selected: false
@@ -10,7 +10,7 @@ export const articleConstant = [
     {        
         id: "1",
         title:"My React Notes — 2",
-        explanation: "Composition, State, controlled/Uncontrolled component ",
+        explanation: "Composition, State, controlled and Uncontrolled component ",
         imgLink: "https://miro.medium.com/max/1400/0*FZcgM8aghnJLZtm0",
         mediumLink: "https://mesutcifci.medium.com/react-notlarim-2-e46b681b0f11",
         selected: false
@@ -18,7 +18,7 @@ export const articleConstant = [
     {
         id: "2",
         title:"My React Notes — 3",
-        explanation: "React Portal, useRef, side effect in React, useEffect, cleanup function, setTimeout ve debouncing",
+        explanation: "React Portal, useRef, side effect in React, useEffect, cleanup function, setTimeout and debouncing",
         imgLink: "https://miro.medium.com/max/1400/0*FZcgM8aghnJLZtm0",
         mediumLink: "https://mesutcifci.medium.com/react-notlarim-3-f9631d853507",
         selected: false

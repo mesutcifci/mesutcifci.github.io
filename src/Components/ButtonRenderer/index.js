@@ -3,9 +3,9 @@ import React from "react";
 import { TechnologyButton } from "../../styles/styles";
 import { ButtonContainer } from "./styles";
 
-const ButtonRenderer = ({ buttonData, handleClickButton }) => {
+const ButtonRenderer = ({ buttonData, handleClickButton, propsName }) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer propsName = {propsName}>
       {buttonData.map((data) => {
         return (
           <TechnologyButton
