@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
-export const DivProjectCounter = styled.div`
-color: white;
-font-size: 20px;
+export const ButtonContainer = styled.div`
 margin: 20px;
-text-aligns: center;
-display: flex;
-justify-content: center;
+
+@media(min-width: 720px){
+    display: flex;
+    justify-content: space-around
+}
+
+`
+
+export const Message = styled.div`
+color: white;
+font-size: 18px;
+margin: 20px;
+text-align: center;
 
 `

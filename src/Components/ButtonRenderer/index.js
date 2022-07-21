@@ -1,16 +1,16 @@
 import { click } from "@testing-library/user-event/dist/click";
 import React from "react";
-import { TechnologyButton } from "../../styles/styles";
-import { ButtonContainer } from "./styles";
+import { ButtonContainer, TechnologyButton } from "./styles";
 
-const ButtonRenderer = ({ buttonData, handleClickButton, propsName }) => {
+const ButtonRenderer = ({ buttonData, handleClickButton, propsName , disabled}) => {
   return (
-    <ButtonContainer propsName = {propsName}>
+    <ButtonContainer  propsName = {propsName}>
       {buttonData.map((data) => {
         return (
           <TechnologyButton
             key={data.id}
             id={data.id}
+            disabled={disabled}
             onClick={handleClickButton}
             selected={data.selected}
           >

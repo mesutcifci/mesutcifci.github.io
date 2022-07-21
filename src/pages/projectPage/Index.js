@@ -15,10 +15,9 @@ import {
   Card,
 } from "../../styles/styles";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
+import NoticeMessage from "./NoticeMessage" 
 import { buttonConstant } from "../../Constants/buttonConstants";
-import { DivProjectCounter } from "./styles";
-// import GoUp from "../../Components/GoUpAndDownButtons/GoUp";
-import GoDown from "../../Components/GoUpAndDownButtons/GoDown";
+import { ButtonContainer } from "./styles";
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -38,9 +37,7 @@ const ProjectPage = () => {
   //buttonConstants has selected key, and we change them true if they have the same target technology name.
   function changeSelectedKeyOfButton(event) {
     let technologyName = event.target.id;
-
     let modifiedButtonConstants = [...buttonConstantsState];
-
     modifiedButtonConstants.forEach((constant) => {
       if (constant.id === technologyName) {
         constant.selected = !constant.selected;
@@ -60,7 +57,18 @@ const ProjectPage = () => {
     setSelectedTechnologyNames([...temporary]);
   }
 
+  //Clear chosen button and change color with the default color.
   function clearChosenButton() {
+    let modifiedButtonConstants = [...buttonConstantsState];
+
+    for (let button of selectedTechnologyNames) {
+      modifiedButtonConstants.forEach((constant) => {
+        if (constant.id === button) {
+          constant.selected = !constant.selected;
+        }
+      });
+      setButtonConstantsState(modifiedButtonConstants);
+    }
     setFilteredProjectConstants([...projects]);
   }
 
@@ -83,12 +91,20 @@ const ProjectPage = () => {
 
   return (
     <PageContainer>
-      {/* <GoDown /> */}
-      <ButtonRenderer
-        propsName={"addGrid"}
-        buttonData={buttonConstant}
-        handleClickButton={changeSelectedKeyOfButton}
-      />
+      <ButtonContainer>
+        <ButtonRenderer
+          propsName={"addGrid"}
+          buttonData={buttonConstant}
+          handleClickButton={changeSelectedKeyOfButton}
+        />
+        <ButtonRenderer
+          disabled={selectedTechnologyNames.length === 0 && true}
+          propsName={"withoutGrid"}
+          buttonData={projectButtonConstant}
+          handleClickButton={clearChosenButton}
+        />
+      </ButtonContainer>
+
       {/* <ScrollToBottom > */}
       <GridContainer>
         {filteredProjectConstants.map((object) => {
@@ -109,17 +125,8 @@ const ProjectPage = () => {
         })}
       </GridContainer>
       {filteredProjectConstants.length === 0 && (
-        <DivProjectCounter>
-          <p>
-            According to your selections, {filteredProjectConstants.length}{" "}
-            projects were found.
-          </p>
-          <ButtonRenderer
-            propsName={"withoutGrid"}
-            buttonData={projectButtonConstant}
-            handleClickButton={clearChosenButton}
-          />
-        </DivProjectCounter>
+        <NoticeMessage filteredProject = {filteredProjectConstants}/>
+        
       )}
       {/* </ScrollToBottom> */}
     </PageContainer>

@@ -37,8 +37,9 @@ export const Img = styled.img`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 `;
-export const Title = styled.p`
+export const Title = styled.h2`
   color: white;
+  font-size: 17px;
   background-color: rgb(45, 38, 38);
   text-align: center;
   box-sizing: border-box;
@@ -46,7 +47,7 @@ export const Title = styled.p`
   width: 280px;
   margin: -10px 0 0 0;
   padding: 0 10px 0 10px;
-  line-height: 60px;
+  line-height: 55px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -102,16 +103,4 @@ export const H2 = styled.h2`
   font-size: 20px;
 `;
 
-export const TechnologyButton = styled.button`
-  color: white;
-  background-color: ${(prop) =>
-    prop.selected ? "#be3144" : "#45567d"};
-  border: 2px solid white;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 10px;
-  &:hover {
-    background-color: rgb(45, 38, 38);
-    cursor: pointer;
-  }
-`;
+

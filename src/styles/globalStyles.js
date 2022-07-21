@@ -17,6 +17,7 @@ html {
     --main-red: #be3144;
     --main-blue: #45567d;
     --main-gray: #303841;
+    --main-title-gray: rgb(45, 38, 38)
   }
 `;
 

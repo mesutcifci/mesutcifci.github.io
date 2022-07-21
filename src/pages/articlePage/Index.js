@@ -12,7 +12,6 @@ import {
 } from "../../styles/styles";
 import Details from "./ArticlesDetail";
 // import { AnimatePresence, layout } from "framer-motion";
-import { Close, IconAngImg } from "./styles";
 
 const ArticlePage = () => {
   const modifiedArticle = [...articleConstant];
@@ -21,8 +20,6 @@ const ArticlePage = () => {
   ]);
 
   const isSelectedTrue = (event) => {
-    console.log("event: ", event.target);
-
     modifiedArticle.forEach((articleKnowledge) => {
       if (articleKnowledge.id == event.target.id) {
         articleKnowledge.selected = !articleKnowledge.selected;
