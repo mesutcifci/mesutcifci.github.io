@@ -9,7 +9,9 @@ export const navbarConstants = [
     navbarTitles: "Project",
     navbarLinks: "/project-page",
   },
-  { id: "articlePage",
-   navbarTitles: "Article", 
-   navbarLinks: "/article-page" }
+  {
+    id: "articlePage",
+    navbarTitles: "Article",
+    navbarLinks: "/article-page",
+  },
 ];

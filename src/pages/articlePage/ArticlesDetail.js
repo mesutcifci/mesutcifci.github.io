@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { articleConstant } from "../../Constants/articleConstant";
 import { DetailOfArticle, CloseIcon, DetailsAndCloseIcon } from "./styles";
 
@@ -8,7 +7,6 @@ const Details = ({ articleID, handleClickButton }) => {
   });
   return (
     <DetailsAndCloseIcon
-      layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -26,7 +24,7 @@ const Details = ({ articleID, handleClickButton }) => {
         />
       </CloseIcon>
 
-      <DetailOfArticle>{selectedArticle[0].explanation}</DetailOfArticle>
+      <DetailOfArticle >{selectedArticle[0].explanation}</DetailOfArticle>
     </DetailsAndCloseIcon>
   );
 };

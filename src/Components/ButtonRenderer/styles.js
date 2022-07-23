@@ -25,7 +25,7 @@ export const TechnologyButton = styled.button`
   padding: 10px;
 
   &:hover {
-    background-color: ${(props) => !props.disabled && "rgb(45, 38, 38)"};
+    background-color: ${(props) => !props.disabled && "#2d2626"};
     cursor: ${(props) => !props.disabled && "pointer"};
   }
 `;

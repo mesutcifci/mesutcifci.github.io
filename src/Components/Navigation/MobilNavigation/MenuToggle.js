@@ -1,10 +1,8 @@
 import * as React from "react";
-import {motion} from "framer-motion"
-import {
-    ButtonStyle,
-  } from "./styles";
+import { ButtonStyle } from "./styles";
+import {motion} from "framer-motion";
 
-const Path = props => (
+const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -13,6 +11,7 @@ const Path = props => (
     {...props}
   />
 );
+
 
 export const MenuToggle = ({ toggle }) => (
   <ButtonStyle onClick={toggle}>
@@ -38,5 +37,5 @@ export const MenuToggle = ({ toggle }) => (
         }}
       />
     </svg>
-  </ButtonStyle>
+    </ButtonStyle>
 );

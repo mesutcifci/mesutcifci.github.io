@@ -4,12 +4,13 @@ import {
   LiStyle,
   TextPlaceholderStyle,
   RefreshStyle,
+  NavbarLink
 } from "./styles";
 
-import { navbarConstants } from "../../Constants/navbarConstants";
 
 const variants = {
   open: {
+    x: [0, 0,],
     y: 0,
     opacity: 1,
     transition: {
@@ -17,7 +18,8 @@ const variants = {
     },
   },
   closed: {
-    y: 50,
+    y: 0,
+    x: [0, -1, -300],
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
@@ -25,20 +27,17 @@ const variants = {
   },
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-export const MenuItem = ({ i, title }) => {
-
-  const style = { background: `${colors[i]}`,
-color: "white" };
+export const MenuItem = ({ i, link, title }) => {
+  const style = { background: "#45567d"};
 
   return (
     <LiStyle
       style={style}
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.1, background: "#2d2626" }}
       whileTap={{ scale: 0.95 }}
     >
-      {title}
+      <NavbarLink to={link}>{title}</NavbarLink>
     </LiStyle>
   );
 };

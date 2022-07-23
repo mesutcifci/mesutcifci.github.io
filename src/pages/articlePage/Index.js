@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { articleConstant } from "../../Constants/articleConstant";
 import {
   PageContainer,
@@ -11,7 +11,7 @@ import {
   Img,
 } from "../../styles/styles";
 import Details from "./ArticlesDetail";
-// import { AnimatePresence, layout } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const ArticlePage = () => {
   const modifiedArticle = [...articleConstant];
@@ -19,13 +19,14 @@ const ArticlePage = () => {
     ...articleConstant,
   ]);
 
-  const isSelectedTrue = (event) => {
+  const updateSelected = (event) => {
     modifiedArticle.forEach((articleKnowledge) => {
       if (articleKnowledge.id == event.target.id) {
         articleKnowledge.selected = !articleKnowledge.selected;
       }
       setArticleConstantState(modifiedArticle);
     });
+
   };
 
 
@@ -34,7 +35,9 @@ const ArticlePage = () => {
       <GridContainer layout>
         {articleConstant.map((article) => {
           return (
-            <Card layout key={article.title}>
+            <Card  key={article.title} 
+            
+            props = {article.selected}>
               <Img src={article.imgLink} alt="" />
               <Title>{article.title}</Title>
               {!article.selected && (
@@ -45,20 +48,25 @@ const ArticlePage = () => {
                   >
                     Go to Medium
                   </PreviewAndMediumLink>
-                  <ContentHoverText onClick={isSelectedTrue} id={article.id}>
+                  <ContentHoverText onClick={updateSelected} id={article.id}>
                     Detail
                   </ContentHoverText>
                 </LinkContainer>
               )}
+              <AnimatePresence>
+
               {article.selected && (
                 <Details
-                  handleClickButton={isSelectedTrue}
+                  handleClickButton={updateSelected}
                   articleID={article.id}
                 />
               )}
+              </AnimatePresence>
+
             </Card>
           );
         })}
+
       </GridContainer>
     </PageContainer>
   );

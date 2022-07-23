@@ -4,11 +4,7 @@ import { useCycle } from "framer-motion";
 import { useDimensions } from "./UseDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import {
-  NavStyle,
-  RefreshStyle,
-  BackgroundStyle,
-} from "./styles";
+import { NavStyle, BackgroundStyle } from "./styles";
 
 const sidebar = {
   open: (height = 100) => ({
@@ -30,7 +26,7 @@ const sidebar = {
   },
 };
 
-export const Example = () => {
+export const MobilNavigation = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -44,7 +40,7 @@ export const Example = () => {
     >
       <BackgroundStyle variants={sidebar} />
       <Navigation />
-      <MenuToggle toggle={() => toggleOpen()} />
+      <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
     </NavStyle>
   );
 };

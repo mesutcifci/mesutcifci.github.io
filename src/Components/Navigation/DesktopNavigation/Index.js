@@ -1,19 +1,16 @@
 import React from "react";
 import {
   NavbarContainer,
-  NavbarStyles,
   NavbarUl,
   NavbarLi,
   NavbarLink
 } from "./styles";
-import NavbarAnimatedIcon from "./NavbarIcon";
-import { navbarConstants } from "../../Constants/navbarConstants";
+
+import { navbarConstants } from "../../../Constants/navbarConstants";
 
 const NavbarPart = () => {
   return (
-    <NavbarContainer>
-        <NavbarAnimatedIcon/>
-      <NavbarStyles className="nav">
+      <NavbarContainer className="nav">
         <NavbarUl className="ul">
           {navbarConstants.map((object) => {
             return (
@@ -31,8 +28,7 @@ const NavbarPart = () => {
             );
           })}
         </NavbarUl>
-      </NavbarStyles>
-    </NavbarContainer>
+      </NavbarContainer>
   );
 };
 

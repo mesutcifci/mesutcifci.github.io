@@ -24,13 +24,14 @@ export const GridContainer = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   border: 3px solid white;
   padding: 0;
   border-radius: 10px;
   margin: 15px;
 `;
-export const Img = styled.img`
+
+export const Img = styled(motion.img)`
   width: 280px;
   height: 200px;
   object-fit: cover;
@@ -53,7 +54,7 @@ export const Title = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-export const LinkContainer = styled.div`
+export const LinkContainer = styled(motion.div)`
   display: flex;
   width: 280px;
   height: 55px;
