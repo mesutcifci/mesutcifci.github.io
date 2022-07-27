@@ -16,3 +16,6 @@ html {
   scroll-behavior: smooth;
 }
 
+.container {
+  flex: 1 1 100%;
+}

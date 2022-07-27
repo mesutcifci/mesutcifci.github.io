@@ -14,18 +14,26 @@ export const BodyStyle = styled(motion.div)`
   align-items: center;
 `;
 
-export const BackgroundStyle = styled(motion.div)`
+export const Sidebar = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   width: 300px;
   background-color: white;
+
+  @media (min-width: 1024px) {
+    // clip-path: none;
+    background-color: #be3144;
+    position: fixed;
+    box-shadow: 0px 1px 2px black;
+    width: 100%;
+    height: 65px;
+  }
 `;
 
 export const NavStyle = styled(motion.nav)`
   width: 300px;
-  overflow: hidden;
   padding: 0;
   margin: 0;
   display: flex;
@@ -33,7 +41,7 @@ export const NavStyle = styled(motion.nav)`
   align-items: center;
 `;
 
-export const ButtonStyle = styled(motion.button)`
+export const ToggleIcon = styled(motion.button)`
   outline: none;
   border: none;
   -webkit-user-select: none;
@@ -45,7 +53,6 @@ export const ButtonStyle = styled(motion.button)`
   left: 15px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   background: transparent;
 `;
 
@@ -58,6 +65,18 @@ export const UlStyle = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-left: 100px;
+    top: 0px;
+    padding: 0px;
+    height: 65px;
+    background-color: #be3144;
+  }
 `;
 
 export const NavbarLink = styled(Link)`
@@ -65,10 +84,14 @@ export const NavbarLink = styled(Link)`
   display: block;
   color: white;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 20px;
+  }
 `;
 
 export const LiStyle = styled(motion.li)`
-  list-style: none;
+  list-style-type: none;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -81,6 +104,20 @@ export const LiStyle = styled(motion.li)`
   line-height: 50px;
   list-style: none;
   font-weight: bold;
+  background-color: #45567d;
+
+  &:hover {
+    background-color: #2d2626;
+
+  }
+  @media (min-width: 1024px) {
+    line-height: 25px;
+    height: 65px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-color: red;
+
+  }
 `;
 
 export const IconPlaceholderStyle = styled(motion.div)`

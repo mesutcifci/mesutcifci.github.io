@@ -14,4 +14,9 @@ export const navbarConstants = [
     navbarTitles: "Article",
     navbarLinks: "/article-page",
   },
+  {
+    id: "learnPage",
+    navbarTitles: "Learn",
+    navbarLinks: "/learn-page",
+  },
 ];

@@ -24,7 +24,7 @@ const Details = ({ articleID, handleClickButton }) => {
         />
       </CloseIcon>
 
-      <DetailOfArticle >{selectedArticle[0].explanation}</DetailOfArticle>
+      <DetailOfArticle>{selectedArticle[0].explanation}</DetailOfArticle>
     </DetailsAndCloseIcon>
   );
 };

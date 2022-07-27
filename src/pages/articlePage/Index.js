@@ -26,18 +26,14 @@ const ArticlePage = () => {
       }
       setArticleConstantState(modifiedArticle);
     });
-
   };
-
 
   return (
     <PageContainer>
-      <GridContainer layout>
+      <GridContainer>
         {articleConstant.map((article) => {
           return (
-            <Card  key={article.title} 
-            
-            props = {article.selected}>
+            <Card key={article.title}>
               <Img src={article.imgLink} alt="" />
               <Title>{article.title}</Title>
               {!article.selected && (
@@ -54,19 +50,16 @@ const ArticlePage = () => {
                 </LinkContainer>
               )}
               <AnimatePresence>
-
-              {article.selected && (
-                <Details
-                  handleClickButton={updateSelected}
-                  articleID={article.id}
-                />
-              )}
+                {article.selected && (
+                  <Details
+                    handleClickButton={updateSelected}
+                    articleID={article.id}
+                  />
+                )}
               </AnimatePresence>
-
             </Card>
           );
         })}
-
       </GridContainer>
     </PageContainer>
   );

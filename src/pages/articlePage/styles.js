@@ -20,17 +20,16 @@ export const DetailsAndCloseIcon = styled.div`
 `;
 
 export const CloseIcon = styled.svg`
-  color: black;
-  margin: 5px;
+  padding: 7px 9px 0 0;
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 9;
-  :hover {
+  z-index: 1;
+  
+  $:hover {
     cursor: pointer;
-    fill: rgb(45, 38, 38);
   }
 `;

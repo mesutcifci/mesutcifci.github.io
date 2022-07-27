@@ -25,17 +25,14 @@ const AboutPage = () => {
         <ContactPart>
           {contactConstants.map((object, index) => {
             return (
-              <a key={index} href={object.contactLink} target="_blank">
                 <ContactLink
+                key={index} href={object.contactLink} target="_blank"
                   className={`${object.contactIcon}`}
                   whileHover={{
                     scale: 1.8,
-                    x: 7,
-                    color: "#be3144",
-                    opacity: 0.9,
+                    color: "#aed6f1",
                   }}
                 ></ContactLink>
-              </a>
             );
           })}
         </ContactPart>

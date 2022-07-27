@@ -27,15 +27,15 @@ const variants = {
   },
 };
 
-export const MenuItem = ({ i, link, title }) => {
+export const MenuItem = ({ link, title }) => {
   const style = { background: "#45567d"};
 
   return (
     <LiStyle
       style={style}
       variants={variants}
-      whileHover={{ scale: 1.1, background: "#2d2626" }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ background: "#2d2626" }}
+      whileTap={{ scale: 0.90 }}
     >
       <NavbarLink to={link}>{title}</NavbarLink>
     </LiStyle>

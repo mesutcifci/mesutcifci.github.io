@@ -4,11 +4,11 @@ import { useCycle } from "framer-motion";
 import { useDimensions } from "./UseDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { NavStyle, BackgroundStyle } from "./styles";
+import { NavStyle, Sidebar } from "./styles";
 
 const sidebar = {
   open: (height = 100) => ({
-    clipPath: `circle(${height * 3 + 200}px at 40px 400px)`,
+    clipPath: `circle(${height * 3+ 200}px at 40px 400px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -34,11 +34,11 @@ export const MobilNavigation = () => {
   return (
     <NavStyle
       initial={false}
-      animate={isOpen ? "open" : "closed"}
+      animate={isOpen ? "open" : "closed"}  
       custom={height}
       ref={containerRef}
     >
-      <BackgroundStyle variants={sidebar} />
+      <Sidebar variants={sidebar} />
       <Navigation />
       <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
     </NavStyle>

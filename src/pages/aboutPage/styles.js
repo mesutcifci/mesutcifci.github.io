@@ -12,14 +12,17 @@ background-color: #45567d;
 `
 export const ProfileFigure = styled.figure`
 display: grid;
-grid-template-columns: repeat(2, auto);
+grid-template-columns: 4fr 1fr;
+justify-content: center;
+max-width: 70%;
 `
 export const ProfileImg = styled.img`
 border-radius: 60%;
 width: 120px;
 height: 120px;
 object-fit: cover;
-margin-left: 15px
+margin-left: 25px
+
 `
 export const ProfileP = styled.p`
 color: white;
@@ -27,9 +30,10 @@ color: white;
 export const ContactPart = styled.div`
 margin-top: 50px
 `
-export const ContactLink = styled(motion.i)`
+export const ContactLink = styled(motion.a)`
+text-decoration: none;
 color: white;
-width: 30px;
+width: 50px;
+box-sizing:border-box;
 padding: 7px;
-scale: 1.5;
 `
