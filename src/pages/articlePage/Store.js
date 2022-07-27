@@ -1,8 +1,8 @@
-import { Item } from "./Item";
 import { AnimatePresence } from "framer-motion";
-import { List } from "./List";
 import {articleConstant} from "../../Constants/articleConstant"
 import { useParams } from "react-router-dom";
+import ArticlePage  from "./Index";
+import { Item } from "./Item";
 
 function Store() {
     let params = useParams();
@@ -12,7 +12,7 @@ function Store() {
     })
     return (
       <>
-        <List selectedId={params.id} />
+        <ArticlePage selectedId={params.id} />
         <AnimatePresence>
           {params.id && imageHasLoaded && (
             <Item title ={selectedArticle[0].title} imgSrc={selectedArticle[0].imgLink} explanation={selectedArticle[0].explanation} id={params.id} key="item" />

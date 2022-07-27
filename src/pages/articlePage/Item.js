@@ -8,7 +8,7 @@ import {
   OpenedTitleContainer,
   ContentContainer,
   DetailOfArticle,
-  OpenedCardTitle
+  OpenedCardTitle,
 } from "./style";
 
 //<CloseIcon
@@ -34,10 +34,10 @@ export function Item({ title, id, imgSrc, explanation }) {
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
       >
-        <DetailCloseLink to="/learn-page" />
+        <DetailCloseLink to="/article-page" />
       </DetailCloseContainer>
 
-      <  OpenedCardContentContainer>
+      <OpenedCardContentContainer>
         <OpenedCardContent layoutId={`card-container-${id}`}>
           <OpenedCardImageContainer layoutId={`card-image-container-${id}`}>
             <img className="card-image" src={imgSrc} alt="" />
@@ -48,10 +48,13 @@ export function Item({ title, id, imgSrc, explanation }) {
           </OpenedTitleContainer>
 
           <ContentContainer animate>
-            <DetailOfArticle>{explanation}</DetailOfArticle>
+            <DetailOfArticle>
+              Topics of this article:
+              <br /> {explanation}
+            </DetailOfArticle>
           </ContentContainer>
         </OpenedCardContent>
-      </  OpenedCardContentContainer>
+      </OpenedCardContentContainer>
     </>
   );
 }

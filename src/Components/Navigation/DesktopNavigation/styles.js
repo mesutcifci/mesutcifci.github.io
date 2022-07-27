@@ -16,7 +16,7 @@ export const NavbarContainer = styled.nav`
 export const NavbarUl = styled(motion.ul)`
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  
+  grid-template-columns: repeat(3, 1fr);  
   height: 65px;
   padding-left: 0px;
   margin: 0;

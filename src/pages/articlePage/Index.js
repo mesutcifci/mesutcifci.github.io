@@ -1,68 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { articleConstant } from "../../Constants/articleConstant";
 import {
   PageContainer,
-  GridContainer,
+  CardContainer,
+  CardItem,
+  CardContentContainer,
+  CardContent,
+  CardImageContainer,
+  TitleContainer,
   Title,
   LinkContainer,
-  PreviewAndMediumLink,
-  ContentHoverText,
-  Card,
-  Img,
-} from "../../styles/styles";
-import Details from "./ArticlesDetail";
-import { AnimatePresence } from "framer-motion";
+  MediumLinkOption,
+  ContentDetailOption,
+  CardOpenLink,
+} from "./style";
 
-const ArticlePage = () => {
-  const modifiedArticle = [...articleConstant];
-  const [articleConstantState, setArticleConstantState] = useState([
-    ...articleConstant,
-  ]);
+function Card({ id, title, imgLink, mediumLink }) {
+  return (
+    <CardItem>
+      <CardContentContainer>
+        <CardContent layoutId={`card-container-${id}`}>
+          <CardImageContainer layoutId={`card-image-container-${id}`}>
+            <img className="card-image" src={`${imgLink}`} alt="" />
+          </CardImageContainer>
 
-  const updateSelected = (event) => {
-    modifiedArticle.forEach((articleKnowledge) => {
-      if (articleKnowledge.id == event.target.id) {
-        articleKnowledge.selected = !articleKnowledge.selected;
-      }
-      setArticleConstantState(modifiedArticle);
-    });
-  };
+          <TitleContainer layoutId={`title-container-${id}`}>
+            <Title>{title}</Title>
+          </TitleContainer>
 
+          <LinkContainer>
+            <MediumLinkOption href={mediumLink} target="_blank">
+              Go to Medium
+            </MediumLinkOption>
+
+            <ContentDetailOption id={id}>
+              <CardOpenLink to={`/article-page/${id}`}>
+                Detail
+              </CardOpenLink>
+            </ContentDetailOption>
+          </LinkContainer>
+        </CardContent>
+      </CardContentContainer>
+    </CardItem>
+  );
+}
+
+function ArticlePage({ selectedId }) {
   return (
     <PageContainer>
-      <GridContainer>
-        {articleConstant.map((article) => {
-          return (
-            <Card key={article.title}>
-              <Img src={article.imgLink} alt="" />
-              <Title>{article.title}</Title>
-              {!article.selected && (
-                <LinkContainer>
-                  <PreviewAndMediumLink
-                    href={article.mediumLink}
-                    target="_blank"
-                  >
-                    Go to Medium
-                  </PreviewAndMediumLink>
-                  <ContentHoverText onClick={updateSelected} id={article.id}>
-                    Detail
-                  </ContentHoverText>
-                </LinkContainer>
-              )}
-              <AnimatePresence>
-                {article.selected && (
-                  <Details
-                    handleClickButton={updateSelected}
-                    articleID={article.id}
-                  />
-                )}
-              </AnimatePresence>
-            </Card>
-          );
-        })}
-      </GridContainer>
+      <CardContainer>
+        {articleConstant.map((card) => (
+          <Card key={card.id} {...card} isSelected={card.id === selectedId} />
+        ))}
+      </CardContainer>
     </PageContainer>
   );
-};
-
+}
 export default ArticlePage;

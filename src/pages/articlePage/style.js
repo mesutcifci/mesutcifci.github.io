@@ -259,11 +259,12 @@ padding: 420px 0px 0 0;
 max-width: 700px;
 `;
 
-export const DetailOfArticle = styled.div`
+export const DetailOfArticle = styled.p`
   width: 100%;
   background-color: #45567d;
   color: white;
   padding: 25px;
+  margin: 0;
   box-sizing: border-box;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
