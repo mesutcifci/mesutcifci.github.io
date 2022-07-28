@@ -1,5 +1,7 @@
 import React from "react";
 import { articleConstant } from "../../Constants/articleConstant";
+import ScrollBottom from "../../Components/ScrollTopBottom/ScrollBottom";
+import ScrollTop from "../../Components/ScrollTopBottom/ScrollTop";
 import {
   PageContainer,
   CardContainer,
@@ -34,9 +36,7 @@ function Card({ id, title, imgLink, mediumLink }) {
             </MediumLinkOption>
 
             <ContentDetailOption id={id}>
-              <CardOpenLink to={`/article-page/${id}`}>
-                Detail
-              </CardOpenLink>
+              <CardOpenLink to={`/article-page/${id}`}>Detail</CardOpenLink>
             </ContentDetailOption>
           </LinkContainer>
         </CardContent>
@@ -48,6 +48,8 @@ function Card({ id, title, imgLink, mediumLink }) {
 function ArticlePage({ selectedId }) {
   return (
     <PageContainer>
+      <ScrollBottom />
+      <ScrollTop />
       <CardContainer>
         {articleConstant.map((card) => (
           <Card key={card.id} {...card} isSelected={card.id === selectedId} />

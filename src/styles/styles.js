@@ -5,7 +5,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 120px 20px 40px 20px;
+  padding: 100px 20px 40px 20px;
   min-height: 100vh;
 `;
 
@@ -29,6 +29,7 @@ export const Card = styled(motion.div)`
   padding: 0;
   border-radius: 10px;
   margin: 15px;
+
 `;
 
 export const Img = styled(motion.img)`

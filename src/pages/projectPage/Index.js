@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ScrollToBottom from "react-scroll-to-bottom";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-
 import { projectConstant } from "../../Constants/projectConstant";
 import { projectButtonConstant } from "../../Constants/projectClearChosenButton";
 import {
@@ -15,9 +12,11 @@ import {
   Card,
 } from "../../styles/styles";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
-import NoticeMessage from "./NoticeMessage" 
+import NoticeMessage from "./NoticeMessage";
 import { buttonConstant } from "../../Constants/buttonConstants";
 import { ButtonContainer } from "./styles";
+import ScrollBottom from "../../Components/ScrollTopBottom/ScrollBottom";
+import ScrollTop from "../../Components/ScrollTopBottom/ScrollTop";
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -25,6 +24,7 @@ const ProjectPage = () => {
   const [filteredProjectConstants, setFilteredProjectConstants] = useState([]);
   const [buttonConstantsState, setButtonConstantsState] =
     useState(buttonConstant);
+  // const [backToDown, setBackToDown] = useState(false);
 
   useEffect(() => {
     changeSelectedTechnologyNamesState();
@@ -33,6 +33,19 @@ const ProjectPage = () => {
   useEffect(() => {
     filterProjects();
   }, [selectedTechnologyNames]);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if(window.screenY < 250){
+  //       setBackToDown(true);
+  //       setBackToUp(false)
+  //     }
+  //     else{
+  //       setBackToDown(false)
+  //       setBackToUp(true)
+  //     }
+  //   })
+  // }, [])
 
   //buttonConstants has selected key, and we change them true if they have the same target technology name.
   function changeSelectedKeyOfButton(event) {
@@ -91,6 +104,9 @@ const ProjectPage = () => {
 
   return (
     <PageContainer>
+      <ScrollBottom />
+      <ScrollTop />
+      
       <ButtonContainer>
         <ButtonRenderer
           propsName={"addGrid"}
@@ -105,7 +121,6 @@ const ProjectPage = () => {
         />
       </ButtonContainer>
 
-      {/* <ScrollToBottom > */}
       <GridContainer>
         {filteredProjectConstants.map((object) => {
           return (
@@ -124,11 +139,10 @@ const ProjectPage = () => {
           );
         })}
       </GridContainer>
+
       {filteredProjectConstants.length === 0 && (
-        <NoticeMessage filteredProject = {filteredProjectConstants}/>
-        
+        <NoticeMessage filteredProject={filteredProjectConstants} />
       )}
-      {/* </ScrollToBottom> */}
     </PageContainer>
   );
 };
