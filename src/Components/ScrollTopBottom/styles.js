@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {devices, colors} from "../../styles/globalStyles"
 export const sizes = {
   mobileS: "320px",
   mobileM: "375px",
@@ -10,31 +10,28 @@ export const sizes = {
   desktop: "2560px",
 };
 
-export const devices = {
-  mobileS: `(min-width: ${sizes.mobileS})`,
-  mobileM: `(min-width: ${sizes.mobileM})`,
-  mobileL: `(min-width: ${sizes.mobileL})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  laptop: `(min-width: ${sizes.laptop})`,
-  laptopL: `(min-width: ${sizes.laptopL})`,
-  desktop: `(min-width: ${sizes.desktop})`,
-};
-
 export const Svg = styled.svg`
-fill: #F5B7B1;
+fill: ${colors.red};
+display: flex;
+justify-content: center;
 height: 30px;
 position: fixed;
 right: 15px;
-width: 40px;
+width: 30px;
 padding: 0;
 margin: 0;
 z-index: 9999;
+border-radius: 50%;
+background-color: rgba(255,255,255, 0.5);
+
 &:hover {
   cursor: pointer;
 }
 
 @media ${devices.mobileM}{
   right: 25px; 
+  background-color: rgba(255,255,255, 0);
+
 }
 
 @media ${devices.tablet} {
@@ -53,6 +50,14 @@ z-index: 9999;
 
 export const GoUpSvg = styled(Svg)`
   bottom: 30px;
+  
+  @media ${devices.laptop}{
+    bottom: 80px; 
+  }
+
+  @media ${devices.laptopL}{
+    bottom: 100px; 
+  }
 `;
 
 export const GoDownSvg = styled(Svg)`

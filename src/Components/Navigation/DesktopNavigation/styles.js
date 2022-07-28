@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import {colors, devices} from "../../../styles/globalStyles"
 
 export const NavbarContainer = styled.nav`
-  background-color: #be3144;
-  color: #fff;
+  background-color: ${colors.red};
+  color: ${colors.white};
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -22,28 +23,27 @@ export const NavbarUl = styled(motion.ul)`
   margin: 0;
   width: 300px;
 
-  @media (min-width: 500px) {
+  @media ${devices.mobileL} {
     width: 450px;
   }
 
-  @media (min-width: 768px) {
+  @media ${devices.tablet} {
     width: 750px;
   }
 
-  @media (min-width: 1441px) {
+  @media ${devices.laptop}  {
     width: 1000px;
   }
 `;
 export const NavbarLi = styled(motion.li)`
-  background-color: "#be3144";
+  background-color: ${colors.red};
   text-align: center;
   font-size: 18px;
   line-height: 60px;
-  background-color: "#be3144";
 `;
 
 export const NavbarLink = styled(Link)`
-  color: white;
+  color: ${colors.white};
   text-decoration: none;
   display: block;
   height: 100%;

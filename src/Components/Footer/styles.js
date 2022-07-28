@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import {colors} from "../../styles/globalStyles"
 
 export const Wrapper = styled.footer`
-  border-top: 3px solid #be3144;
+  border-top: 3px solid ${colors.red};
   height: 10vh;
-  color: white;
+  color: ${colors.white};
   box-sizing: border-box;
   text-align: right;
   padding-right: 50px;
@@ -12,7 +13,7 @@ export const Wrapper = styled.footer`
 
 export const Link = styled.a`
   line-height: 50px;
-  color: white;
+  color: ${colors.white};
   text-decoration: none;
 
   &:hover {

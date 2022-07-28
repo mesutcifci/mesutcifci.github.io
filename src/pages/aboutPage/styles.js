@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import {colors} from "../../styles/globalStyles"
 
 export const AboutMe = styled.div`
 min-height: 100vh;
@@ -8,7 +9,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: #45567d;
+background-color: ${colors.blue};
 `
 export const ProfileFigure = styled.figure`
 display: grid;
@@ -25,14 +26,14 @@ margin-left: 25px
 
 `
 export const ProfileP = styled.p`
-color: white;
+color: ${colors.white};
 `
 export const ContactPart = styled.div`
 margin-top: 50px
 `
 export const ContactLink = styled(motion.a)`
 text-decoration: none;
-color: white;
+color: ${colors.white};
 width: 50px;
 box-sizing:border-box;
 padding: 7px;

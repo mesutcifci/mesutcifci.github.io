@@ -13,7 +13,7 @@ import {
 const MainPage = () => {
   return (
     <>
-      <ScrollBottom />
+      <ScrollBottom/>
       <ScrollTop />
       <MainPageContainer>
         <WelcomeContainer>

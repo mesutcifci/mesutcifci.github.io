@@ -1,26 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-export const sizes = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
-
-export const devices = {
-  mobileS: `(min-width: ${sizes.mobileS})`,
-  mobileM: `(min-width: ${sizes.mobileM})`,
-  mobileL: `(min-width: ${sizes.mobileL})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  laptop: `(min-width: ${sizes.laptop})`,
-  laptopL: `(min-width: ${sizes.laptopL})`,
-  desktop: `(min-width: ${sizes.desktop})`,
-};
+import {colors, devices} from "../../styles/globalStyles"
 
 export const PageContainer = styled.div`
   display: flex;
@@ -107,7 +88,7 @@ export const CardContent = styled(motion.div)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  border: 3px solid white;
+  border: 3px solid ${colors.white};
   box-sizing: border-box;
 
 `;
@@ -131,7 +112,7 @@ export const TitleContainer = styled(motion.div)`
 export const Title = styled.h2`
   color: white;
   font-size: 18px;
-  background-color: rgb(45, 38, 38);
+  background-color: ${colors.titleBlack} ;
   text-align: center;
   box-sizing: border-box;
   height: 55px;
@@ -154,9 +135,9 @@ export const LinkContainer = styled(motion.div)`
 `;
 
 export const MediumLinkOption = styled.a`
-  color: white;
+  color: ${colors.white};
   text-decoration: none;
-  background-color: #be3144;
+  background-color: ${colors.red};
   font-weight: bold;
   text-align: center;
   font-size: 16px;
@@ -167,7 +148,7 @@ export const MediumLinkOption = styled.a`
 `;
 
 export const ContentDetailOption = styled(motion.span)`
-  background-color: #131215;
+  background-color: ${colors.detailBlack};
   font-weight: bold;
   font-size: 16px;
   text-align: center;
@@ -182,14 +163,14 @@ export const CardOpenLink = styled(Link)`
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: white;
+  color: ${colors.white};
   display: inline-block;
 `;
 
 export const DetailCloseContainer = styled(motion.div)`
   z-index: 1;
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: ${colors.openedCardBackground};
   will-change: opacity;
   top: 0;
   bottom: 0;
@@ -245,12 +226,12 @@ left: 0px;
 font-size: 16px;
 padding: 5px 0 5px 20px;
 width: 100%;
-background-color:  rgba(0, 0, 0, 0.8);
+background-color: ${colors.openedCardBackground};
 z-index: 1;
 `;
 
 export const OpenedCardTitle = styled.h2`
-color: #fff;
+color: ${colors.white};
 margin: 8px 0;
 `;
 
@@ -261,8 +242,8 @@ max-width: 700px;
 
 export const DetailOfArticle = styled.p`
   width: 100%;
-  background-color: #45567d;
-  color: white;
+  background-color: ${colors.blue};
+  color: ${colors.white};
   padding: 25px;
   margin: 0;
   box-sizing: border-box;

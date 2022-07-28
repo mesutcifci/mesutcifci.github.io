@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import {colors} from "../../styles/globalStyles"
 
 export const ButtonContainer = styled.div`
   width: auto;
@@ -15,17 +16,17 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TechnologyButton = styled.button`
-  color: white;
-  background-color: ${(prop) => (prop.selected ? "#be3144" : "#45567d")};
+  color: ${colors.white};
+  background-color: ${(prop) => (prop.selected ? colors.red : colors.blue)};
   background-color: ${(props) => props.disabled && "gray"};
 
-  border: 2px solid white;
+  border: 2px solid ${colors.white};
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
 
   &:hover {
-    background-color: ${(props) => !props.disabled && "#2d2626"};
+    background-color: ${(props) => !props.disabled && colors.black};
     cursor: ${(props) => !props.disabled && "pointer"};
   }
 `;

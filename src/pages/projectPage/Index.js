@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { projectConstant } from "../../Constants/projectConstant";
 import { projectButtonConstant } from "../../Constants/projectClearChosenButton";
-import {
-  PageContainer,
-  GridContainer,
-  Img,
-  Title,
-  LinkContainer,
-  PreviewAndMediumLink,
-  ProjectCodeLink,
-  Card,
-} from "../../styles/styles";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
 import NoticeMessage from "./NoticeMessage";
 import { buttonConstant } from "../../Constants/buttonConstants";
-import { ButtonContainer } from "./styles";
 import ScrollBottom from "../../Components/ScrollTopBottom/ScrollBottom";
 import ScrollTop from "../../Components/ScrollTopBottom/ScrollTop";
+import {
+  PageContainer,
+  GridContainer,
+  Card,
+  Img,
+  Title,
+  LinkContainer,
+  PreviewLink,
+  ProjectCodeLink,
+  ButtonContainer,
+} from "./styles";
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -24,7 +24,6 @@ const ProjectPage = () => {
   const [filteredProjectConstants, setFilteredProjectConstants] = useState([]);
   const [buttonConstantsState, setButtonConstantsState] =
     useState(buttonConstant);
-  // const [backToDown, setBackToDown] = useState(false);
 
   useEffect(() => {
     changeSelectedTechnologyNamesState();
@@ -33,19 +32,6 @@ const ProjectPage = () => {
   useEffect(() => {
     filterProjects();
   }, [selectedTechnologyNames]);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if(window.screenY < 250){
-  //       setBackToDown(true);
-  //       setBackToUp(false)
-  //     }
-  //     else{
-  //       setBackToDown(false)
-  //       setBackToUp(true)
-  //     }
-  //   })
-  // }, [])
 
   //buttonConstants has selected key, and we change them true if they have the same target technology name.
   function changeSelectedKeyOfButton(event) {
@@ -104,7 +90,7 @@ const ProjectPage = () => {
 
   return (
     <PageContainer>
-      <ScrollBottom />
+      <ScrollBottom windowHeight= {2700} />
       <ScrollTop />
       
       <ButtonContainer>
@@ -128,9 +114,9 @@ const ProjectPage = () => {
               <Img src={object.imgSrc} alt={object.title} />
               <Title id={object.title}>{object.title}</Title>
               <LinkContainer>
-                <PreviewAndMediumLink href={object.previewLink} target="_blank">
+                <PreviewLink href={object.previewLink} target="_blank">
                   Preview
-                </PreviewAndMediumLink>
+                </PreviewLink>
                 <ProjectCodeLink href={object.codeLink} target="_blank">
                   Code
                 </ProjectCodeLink>
