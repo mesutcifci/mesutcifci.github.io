@@ -14,15 +14,16 @@ export const Svg = styled.svg`
 fill: ${colors.red};
 display: flex;
 justify-content: center;
-height: 30px;
+height: 40px;
 position: fixed;
 right: 15px;
-width: 30px;
+width: 40px;
 padding: 0;
 margin: 0;
 z-index: 9999;
 border-radius: 50%;
-background-color: rgba(255,255,255, 0.5);
+background-color: #fff;
+border: 1px solid rgba(255, 255, 255, 0.5);
 
 &:hover {
   cursor: pointer;
@@ -30,7 +31,6 @@ background-color: rgba(255,255,255, 0.5);
 
 @media ${devices.mobileM}{
   right: 25px; 
-  background-color: rgba(255,255,255, 0);
 
 }
 
@@ -62,5 +62,5 @@ export const GoUpSvg = styled(Svg)`
 
 export const GoDownSvg = styled(Svg)`
   top: 90px;
-
+  transform: rotate(180deg);
 `;

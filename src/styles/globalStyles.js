@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import styled from "styled-components"
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0px;
@@ -40,9 +40,10 @@ export const devices = {
 };
 
 export const colors = {
-  white: "#f0f0f0",
+  white: "#fff",
   red: "#be3144",
   blue: "#45567d",
+  lightBlue: "#316bbe",
   gray: "#303841",
   darkGray: "#2e2727",
   black: "#2d2626",
@@ -50,4 +51,10 @@ export const colors = {
   detailBlack: "#131215",
   openedCardBackground: "rgba(0, 0, 0, 0.8)",
 }
+
+export const PageTitle = styled.h1` 
+  display: block;
+  color: ${colors.white};
+  text-align: center;
+`;
 

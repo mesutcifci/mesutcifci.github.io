@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {colors} from "../../styles/globalStyles"
+import {motion} from "framer-motion";
 
 export const MainPageContainer = styled.div`
   background: linear-gradient(to bottom, #232526, #3a3d40);
@@ -24,7 +25,7 @@ export const MainPageH1 = styled.h1`
   margin: 20px 0 0 0;
 `;
 
-export const MainPageP = styled.p`
+export const MainPageP = styled(motion.p)`
   color: ${colors.red};
   font-size: 25px;
   margin: 3px;

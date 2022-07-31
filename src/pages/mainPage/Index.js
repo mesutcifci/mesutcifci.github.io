@@ -1,7 +1,4 @@
 import React from "react";
-import ScrollBottom from "../../Components/ScrollTopBottom/ScrollBottom";
-import ScrollTop from "../../Components/ScrollTopBottom/ScrollTop";
-import AboutPage from "../AboutPage/Index";
 
 import {
   MainPageContainer,
@@ -10,19 +7,31 @@ import {
   MainPageP,
 } from "./styles";
 
+const variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+    },
+  },
+};
+
 const MainPage = () => {
+
   return (
     <>
-      <ScrollBottom/>
-      <ScrollTop />
       <MainPageContainer>
         <WelcomeContainer>
           <MainPageH1>Welcome!</MainPageH1>
           <MainPageH1>I am Mesut.</MainPageH1>
-          <MainPageP>a front-end developer</MainPageP>
+          <MainPageP variants={variants} initial="hidden" animate="visible">
+            a front-end developer
+          </MainPageP>
         </WelcomeContainer>
       </MainPageContainer>
-      <AboutPage />
     </>
   );
 };

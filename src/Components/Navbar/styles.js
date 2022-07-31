@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {colors, devices} from "../../../styles/globalStyles"
+import { colors, devices } from "../../styles/globalStyles";
 
 export const BodyStyle = styled(motion.div)`
   position: absolute;
@@ -15,14 +15,35 @@ export const BodyStyle = styled(motion.div)`
   align-items: center;
 `;
 
+export const sidebar = {
+  open: (height = 100) => ({
+    clipPath: `circle(${height * 3 + 200}px at 40px 400px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(30px at 40px 40px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
 export const Sidebar = styled(motion.div)`
-  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   width: 300px;
   z-index: 2;
   background-color: ${colors.white};
+  position: fixed;
+
 
   @media ${devices.laptop} {
     background-color: ${colors.red};
@@ -30,6 +51,7 @@ export const Sidebar = styled(motion.div)`
     box-shadow: 0px 1px 2px ${colors.black};
     width: 100%;
     height: 65px;
+    display: none;
   }
 `;
 
@@ -40,6 +62,12 @@ export const NavStyle = styled(motion.nav)`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 9999;
+
+  @media ${devices.laptop} {
+    width: 100%;
+  }
 `;
 
 export const ToggleIcon = styled(motion.button)`
@@ -56,6 +84,13 @@ export const ToggleIcon = styled(motion.button)`
   width: 50px;
   height: 50px;
   background: transparent;
+
+  @media ${devices.laptop} {
+    display: none;
+    width: 0px;
+    height: 0px;
+    position: static;
+  }
 `;
 
 export const UlStyle = styled(motion.ul)`
@@ -68,12 +103,10 @@ export const UlStyle = styled(motion.ul)`
   flex-direction: column;
   align-items: center;
   z-index: 2;
-
   @media ${devices.laptop} {
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin-left: 100px;
     top: 0px;
     padding: 0px;
     height: 65px;
@@ -83,17 +116,19 @@ export const UlStyle = styled(motion.ul)`
 
 export const NavbarLink = styled(Link)`
   text-decoration: none;
-  display: block;
+  display: inline-block;
   color: ${colors.white};
   width: 100%;
 
   @media ${devices.laptop} {
     padding: 20px;
+
   }
 `;
 
 export const LiStyle = styled(motion.li)`
   list-style-type: none;
+  font-size: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -110,16 +145,24 @@ export const LiStyle = styled(motion.li)`
 
   &:hover {
     background-color: ${colors.black};
-
   }
+
   @media ${devices.laptop} {
     line-height: 25px;
     height: 65px;
     margin-bottom: 0px;
     border-radius: 0px;
-    background-color: red;
+    opacity: 1 !important;
+    transform: unset !important;
+    background-color: ${(props) => (props.selected ? colors.titleBlack : colors.red)} !important;
+
+
+    &:hover {
+      background-color: ${colors.blue} !important;
+    }
   }
 `;
+
 
 export const IconPlaceholderStyle = styled(motion.div)`
   width: 40px;
@@ -127,6 +170,8 @@ export const IconPlaceholderStyle = styled(motion.div)`
   border-radius: 50%;
   flex: 40px 0;
   margin-right: 20px;
+  @media ${devices.laptop} {
+  }
 `;
 
 export const RefreshStyle = styled(motion.div)`
@@ -142,4 +187,6 @@ export const RefreshStyle = styled(motion.div)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @media ${devices.laptop} {
+  }
 `;

@@ -17,7 +17,7 @@ export const ButtonContainer = styled.div`
 
 export const TechnologyButton = styled.button`
   color: ${colors.white};
-  background-color: ${(prop) => (prop.selected ? colors.red : colors.blue)};
+  background-color: ${(props) => (props.selected ? colors.red : colors.blue)};
   background-color: ${(props) => props.disabled && "gray"};
 
   border: 2px solid ${colors.white};

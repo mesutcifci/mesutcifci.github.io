@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import {colors, devices} from "../../styles/globalStyles"
 
 export const PageContainer = styled.div`
-  display: flex;
-  justify-content: center;
   box-sizing: border-box;
   padding-top: 120px;
   padding-bottom: 50px;
+`;
+
+export const PageTitle = styled.h1`
+  display: block;
+  color: ${colors.white};
+  text-align: center;
 `;
 
 export const CardContainer = styled.ul`
@@ -99,7 +103,12 @@ export const CardImageContainer = styled(motion.div)`
   left: 0;
   overflow: hidden;
   height: 420px;
-  width: 100vw;
+  width: 100%;
+`;
+export const ArticleImg = styled(motion.img)`
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 `;
 
 export const TitleContainer = styled(motion.div)`

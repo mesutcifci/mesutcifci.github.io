@@ -3,20 +3,10 @@ import { projectConstant } from "../../Constants/projectConstant";
 import { projectButtonConstant } from "../../Constants/projectClearChosenButton";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
 import NoticeMessage from "./NoticeMessage";
+import ProjectCard from "./ProjectCard";
 import { buttonConstant } from "../../Constants/buttonConstants";
-import ScrollBottom from "../../Components/ScrollTopBottom/ScrollBottom";
-import ScrollTop from "../../Components/ScrollTopBottom/ScrollTop";
-import {
-  PageContainer,
-  GridContainer,
-  Card,
-  Img,
-  Title,
-  LinkContainer,
-  PreviewLink,
-  ProjectCodeLink,
-  ButtonContainer,
-} from "./styles";
+import { PageContainer, GridContainer,  ButtonContainer } from "./styles";
+import {PageTitle} from "../../styles/globalStyles"
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -81,18 +71,14 @@ const ProjectPage = () => {
           break;
         }
       }
-
       return isProjectIncludesAllSelectedTechnologies;
     });
-
     setFilteredProjectConstants([...filteredProjects]);
   }
 
   return (
     <PageContainer>
-      <ScrollBottom windowHeight= {2700} />
-      <ScrollTop />
-      
+      <PageTitle>My Projects</PageTitle>
       <ButtonContainer>
         <ButtonRenderer
           propsName={"addGrid"}
@@ -108,22 +94,9 @@ const ProjectPage = () => {
       </ButtonContainer>
 
       <GridContainer>
-        {filteredProjectConstants.map((object) => {
-          return (
-            <Card key={object.title}>
-              <Img src={object.imgSrc} alt={object.title} />
-              <Title id={object.title}>{object.title}</Title>
-              <LinkContainer>
-                <PreviewLink href={object.previewLink} target="_blank">
-                  Preview
-                </PreviewLink>
-                <ProjectCodeLink href={object.codeLink} target="_blank">
-                  Code
-                </ProjectCodeLink>
-              </LinkContainer>
-            </Card>
-          );
-        })}
+        {filteredProjectConstants.map((object) => (
+          <ProjectCard key={object.title} {...object} />
+        ))}
       </GridContainer>
 
       {filteredProjectConstants.length === 0 && (
