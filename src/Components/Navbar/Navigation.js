@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MenuItem } from "./MenuItem";
 import { UlStyle } from "./styles";
 import { navbarConstants } from "../../Constants/navbarConstants";
@@ -14,6 +14,14 @@ const variants = {
 
 export const Navigation = () => {
   const [constant, setConstant] = useState([...navbarConstants]);
+  const handleClick = (event) => {
+    selectedToggle(event);
+    scrollTop();
+  };
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   const selectedToggle = (event) => {
     const copyConstant = [...constant];
@@ -33,7 +41,7 @@ export const Navigation = () => {
         <MenuItem
           key={constant.id}
           selected={constant.selected}
-          onClick={selectedToggle}
+          onClick={handleClick}
           link={constant.navbarLinks}
           title={constant.navbarTitles}
         />

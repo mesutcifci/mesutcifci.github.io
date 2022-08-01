@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainPage from "./Pages/MainPage/Index";
 import AboutPage from "./Pages/AboutPage/Index";
 import ProjectPage from "./Pages/ProjectPage/Index";
@@ -12,6 +12,7 @@ import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="container">
       <Scroll scrollPoint={65} visibleLength={500} direction ={"up"} />
