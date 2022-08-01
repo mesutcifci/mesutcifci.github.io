@@ -5,8 +5,7 @@ import ProjectPage from "./Pages/ProjectPage/Index";
 import ArticlePage from "./Pages/ArticlePage/Store";
 import Store from "./Pages/ArticlePage/Store";
 import Navbar from "./Components/Navbar/Index";
-import ScrollTop from "./Components/Scroll/ScrollTop";
-import ScrollBottom from "./Components/Scroll/ScrollBottom";
+import Scroll from "./Components/Scroll/index";
 import Footer from "./Components/Footer/Index";
 import GlobalStyle from "./styles/globalStyles";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
@@ -15,10 +14,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="container">
-      <ScrollBottom top={0} />
-      <ScrollBottom top={99999} />
-
-      <ScrollTop top={0}/>
+      <Scroll scrollPoint={65} visibleLength={500} direction ={"up"} />
+      <Scroll scrollPoint={99999} visibleLength={65} direction ={"down"} />
       <GlobalStyle />
       <AnimateSharedLayout>
         <Router>

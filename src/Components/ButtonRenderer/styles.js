@@ -16,17 +16,17 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TechnologyButton = styled.button`
-  color: ${colors.white};
-  background-color: ${(props) => (props.selected ? colors.red : colors.blue)};
+  color: ${colors.textColor};
+  background-color: ${(props) => (props.selected ? colors.primary : colors.secondary)};
   background-color: ${(props) => props.disabled && "gray"};
 
-  border: 2px solid ${colors.white};
+  border: 2px solid ${colors.borderColor};
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
 
   &:hover {
-    background-color: ${(props) => !props.disabled && colors.black};
+    background-color: ${(props) => !props.disabled && colors.tertiary};
     cursor: ${(props) => !props.disabled && "pointer"};
   }
 `;

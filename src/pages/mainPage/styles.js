@@ -3,7 +3,6 @@ import {colors} from "../../styles/globalStyles"
 import {motion} from "framer-motion";
 
 export const MainPageContainer = styled.div`
-  background: linear-gradient(to bottom, #232526, #3a3d40);
   width: auto;
   height: 100vh;
   display: flex;
@@ -21,12 +20,12 @@ export const WelcomeContainer = styled.div`
 export const MainPageH1 = styled.h1`
   font-size: 40px;
   font-family: "Lato", sans-serif;
-  color: ${colors.white};
+  color: ${colors.textColor};
   margin: 20px 0 0 0;
 `;
 
 export const MainPageP = styled(motion.p)`
-  color: ${colors.red};
+  color: ${colors.primary};
   font-size: 25px;
   margin: 3px;
   font-style: italic;

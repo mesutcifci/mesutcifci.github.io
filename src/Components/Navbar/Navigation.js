@@ -15,10 +15,6 @@ const variants = {
 export const Navigation = () => {
   const [constant, setConstant] = useState([...navbarConstants]);
 
-  useEffect(() => {
-    console.log(constant)
-  }, [constant]);
-
   const selectedToggle = (event) => {
     const copyConstant = [...constant];
     const selectedText = event.target.text;

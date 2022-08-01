@@ -17,7 +17,7 @@ export const BodyStyle = styled(motion.div)`
 
 export const sidebar = {
   open: (height = 100) => ({
-    clipPath: `circle(${height * 3 + 200}px at 40px 400px)`,
+    clipPath: `circle(${height * 7 }px at 40px 400px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -39,16 +39,19 @@ export const Sidebar = styled(motion.div)`
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
   z-index: 2;
-  background-color: ${colors.white};
+  background-color: ${colors.mobilNavbarBackground};
   position: fixed;
 
+  @media (min-width: 550px) {
+    width: 300px;
+  }
 
   @media ${devices.laptop} {
-    background-color: ${colors.red};
+    background-color: ${colors.primary};
     position: fixed;
-    box-shadow: 0px 1px 2px ${colors.black};
+    box-shadow: 0px 1px 2px ${colors.tertiary};
     width: 100%;
     height: 65px;
     display: none;
@@ -64,7 +67,6 @@ export const NavStyle = styled(motion.nav)`
   align-items: center;
   position: fixed;
   z-index: 9999;
-
   @media ${devices.laptop} {
     width: 100%;
   }
@@ -98,11 +100,16 @@ export const UlStyle = styled(motion.ul)`
   padding: 25px;
   position: absolute;
   top: 180px;
-  width: 230px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
+
+  @media (min-width: 550px) {
+    width: 230px;
+  }
+
   @media ${devices.laptop} {
     flex-direction: row;
     justify-content: center;
@@ -110,19 +117,18 @@ export const UlStyle = styled(motion.ul)`
     top: 0px;
     padding: 0px;
     height: 65px;
-    background-color: ${colors.red};
+    background-color: ${colors.primary};
   }
 `;
 
 export const NavbarLink = styled(Link)`
   text-decoration: none;
   display: inline-block;
-  color: ${colors.white};
+  color: ${colors.textColor};
   width: 100%;
 
   @media ${devices.laptop} {
     padding: 20px;
-
   }
 `;
 
@@ -141,10 +147,11 @@ export const LiStyle = styled(motion.li)`
   line-height: 50px;
   list-style: none;
   font-weight: bold;
-  background-color: ${colors.blue};
+
+  background-color: ${colors.secondary};
 
   &:hover {
-    background-color: ${colors.black};
+    background-color: ${colors.tertiary};
   }
 
   @media ${devices.laptop} {
@@ -154,11 +161,10 @@ export const LiStyle = styled(motion.li)`
     border-radius: 0px;
     opacity: 1 !important;
     transform: unset !important;
-    background-color: ${(props) => (props.selected ? colors.titleBlack : colors.red)} !important;
-
+    background-color: ${(props) => (props.selected ? colors.cardTitle : colors.primary)} !important;
 
     &:hover {
-      background-color: ${colors.blue} !important;
+      background-color: ${colors.secondary} !important;
     }
   }
 `;

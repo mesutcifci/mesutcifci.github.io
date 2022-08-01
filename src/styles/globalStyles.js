@@ -1,23 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components"
-const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0px;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #232526, #3a3d40);
-}
-
-html {
-scroll-behavior: smooth;
-}
-
-.container {
-flex: 1 1 100%;
-}
-`;
-
-export default GlobalStyle;
+import styled from "styled-components";
 
 export const sizes = {
   mobileS: "320px",
@@ -40,21 +22,45 @@ export const devices = {
 };
 
 export const colors = {
-  white: "#fff",
-  red: "#be3144",
-  blue: "#45567d",
-  lightBlue: "#316bbe",
+  pageBackground: "linear-gradient(to bottom, #232526, #3a3d40)",
+  primary: "#be3144",
+  secondary: "#45567d",
+  tertiary: "#2d2626",
+  textColor: "#fff",
+  borderColor: "#fff",
+  mobilNavbarBackground:"#fff",
   gray: "#303841",
   darkGray: "#2e2727",
-  black: "#2d2626",
-  titleBlack: "rgb(45, 38, 38)",
-  detailBlack: "#131215",
+  cardTitle: "rgb(45, 38, 38)",
+  cardDetail: "#131215",
   openedCardBackground: "rgba(0, 0, 0, 0.8)",
 }
 
 export const PageTitle = styled.h1` 
   display: block;
-  color: ${colors.white};
+  color: ${colors.textColor};
   text-align: center;
+  margin-top: 60px;
+
 `;
+
+const GlobalStyle = createGlobalStyle`
+body {
+  margin: 0px;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: ${colors.pageBackground};
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+.container {
+flex: 1 1 100%;
+}
+`;
+
+export default GlobalStyle;
+
 

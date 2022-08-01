@@ -1,66 +1,72 @@
 import styled from "styled-components";
-import {devices, colors} from "../../styles/globalStyles"
-export const sizes = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
+import { motion } from "framer-motion";
+import { devices, colors } from "../../styles/globalStyles";
 
-export const Svg = styled.svg`
-fill: ${colors.red};
-display: flex;
-justify-content: center;
-height: 40px;
-position: fixed;
-right: 15px;
-width: 40px;
-padding: 0;
-margin: 0;
-z-index: 9999;
-border-radius: 50%;
-background-color: #fff;
-border: 1px solid rgba(255, 255, 255, 0.5);
+export const Svg = styled(motion.svg)`
+  fill: ${colors.primary};
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 15px;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #fff;
 
-&:hover {
-  cursor: pointer;
-}
-
-@media ${devices.mobileM}{
-  right: 25px; 
-
-}
-
-@media ${devices.tablet} {
-  right: 20px; 
-}
-
-@media ${devices.laptop}{
-  right: 70px; 
-}
-
-@media ${devices.desktop}{
-  right: 170px; 
-}
-`;
-
-
-export const GoUpSvg = styled(Svg)`
-  bottom: 30px;
-  
-  @media ${devices.laptop}{
-    bottom: 80px; 
+  &:hover {
+    cursor: pointer;
   }
 
-  @media ${devices.laptopL}{
-    bottom: 100px; 
+  @media ${devices.mobileM} {
+    right: 15px;
+  }
+
+  @media ${devices.tablet} {
+    right: 20px;
+  }
+
+  @media ${devices.laptop} {
+    right: 60px;
+  }
+  @media ${devices.laptopL} {
+    right: 110px;
+  }
+  @media ${devices.desktop} {
+    right: 370px;
   }
 `;
 
-export const GoDownSvg = styled(Svg)`
-  top: 90px;
-  transform: rotate(180deg);
+export const ScrollIcon = styled(Svg)`
+  ${(props) => {
+    if (props.direction === "up") {
+      return `
+      bottom: 80px;
+    @media ${devices.laptop}{
+      bottom: 85px; 
+    }
+    @media ${devices.laptopL}{
+      bottom: 110px; 
+    }
+    @media ${devices.desktop}{
+      bottom: 200px; 
+    }`;
+    } else {
+      return `
+      transform: rotate(180deg);
+      top: 40px;
+
+      @media ${devices.laptop}{
+        top: 130px;  
+      }
+      @media ${devices.desktop}{
+        top: 220px; 
+      }
+      
+      `;
+    }
+  }}
 `;

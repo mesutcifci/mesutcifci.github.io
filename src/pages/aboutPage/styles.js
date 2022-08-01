@@ -22,23 +22,24 @@ width: 120px;
 height: 120px;
 object-fit: cover;
 margin-right: 45px;
-border: 3px solid ${colors.white};
+border: 3px solid ${colors.borderColor};
 
 &:hover{
-    border: 3px solid ${colors.red};
+    border: 3px solid ${colors.primary};
 }
 `
 export const ProfileP = styled.p`
-color: ${colors.white};
+color: ${colors.textColor};
 line-height: 30px;
 margin-top: 20px
 `
 export const ContactPart = styled.div`
 margin-top: 50px
 `
+
 export const ContactLink = styled(motion.a)`
 text-decoration: none;
-color: ${colors.white};
+color: ${colors.textColor};
 width: 50px;
 box-sizing:border-box;
 padding: 7px;

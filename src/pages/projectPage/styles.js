@@ -23,10 +23,13 @@ export const GridContainer = styled.div`
   @media ${devices.laptop} {
     grid-template-columns: repeat(3, 1fr);
   }
+  @media ${devices.desktop} {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 export const Card = styled(motion.div)`
-  border: 3px solid ${colors.white};
+  border: 3px solid ${colors.borderColor};
   padding: 0;
   border-radius: 10px;
   margin: 15px;
@@ -41,9 +44,9 @@ export const Img = styled(motion.img)`
 `;
 
 export const Title = styled.h2`
-  color: ${colors.white};
+  color: ${colors.textColor};
   font-size: 17px;
-  background-color: ${colors.titleBlack};
+  background-color: ${colors.cardTitle};
   text-align: center;
   box-sizing: border-box;
   height: 50px;
@@ -66,7 +69,7 @@ export const LinkContainer = styled(motion.div)`
 export const PreviewLink = styled.a`
   color: white;
   text-decoration: none;
-  background-color: ${colors.red};
+  background-color: ${colors.primary};
   font-weight: bold;
   text-align: center;
   font-size: 16px;
@@ -78,8 +81,8 @@ export const PreviewLink = styled.a`
 
 export const ProjectCodeLink = styled.a`
   text-decoration: none;
-  color: ${colors.white};
-  background-color: ${colors.detailBlack};
+  color: ${colors.textColor};
+  background-color: ${colors.cardDetail};
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -90,7 +93,7 @@ export const ProjectCodeLink = styled.a`
 `;
 
 export const Message = styled.div`
-  color: ${colors.white};
+  color: ${colors.textColor};
   font-size: 18px;
   margin: 20px;
   text-align: center;

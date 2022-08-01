@@ -3,7 +3,7 @@ import {
   LiStyle,
   NavbarLink
 } from "./styles";
-
+import { colors } from "../../styles/globalStyles";
 
 const variants = {
   open: {
@@ -25,7 +25,7 @@ const variants = {
 };
 
 export const MenuItem = ({ link, title, onClick, selected }) => {
-  const style = { background: "#45567d"};
+  const style = { background: colors.secondary};
 
   return (
     <LiStyle
@@ -33,7 +33,7 @@ export const MenuItem = ({ link, title, onClick, selected }) => {
       style={style}
       selected={selected}
       variants={variants}
-      whileHover={{ background: "#2d2626" }}
+      whileHover={{ background: colors.tertiary }}
       whileTap={{ scale: 0.90 }}
     >
       <NavbarLink  to={link}>{title}</NavbarLink>

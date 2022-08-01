@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {colors, devices} from "../../styles/globalStyles"
+import { colors, devices } from "../../styles/globalStyles";
 
 export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   padding-top: 120px;
   padding-bottom: 50px;
@@ -11,7 +14,7 @@ export const PageContainer = styled.div`
 
 export const PageTitle = styled.h1`
   display: block;
-  color: ${colors.white};
+  color: ${colors.textColor};
   text-align: center;
 `;
 
@@ -21,18 +24,20 @@ export const CardContainer = styled.ul`
   align-content: flex-start;
   padding: 0 25px 0px 25px;
   width: 100%;
-  max-width: 2000px;
+  max-width: 1500px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 
-  
   @media ${devices.tablet} {
     padding: 0 30px 0 30px;
   }
 
   @media ${devices.laptop} {
     padding: 0 150px 0 150px;
+  }
+  @media ${devices.desktop} {
+    max-width: 1700px;
   }
 `;
 
@@ -92,9 +97,8 @@ export const CardContent = styled(motion.div)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  border: 3px solid ${colors.white};
+  border: 3px solid ${colors.borderColor};
   box-sizing: border-box;
-
 `;
 
 export const CardImageContainer = styled(motion.div)`
@@ -121,7 +125,7 @@ export const TitleContainer = styled(motion.div)`
 export const Title = styled.h2`
   color: white;
   font-size: 18px;
-  background-color: ${colors.titleBlack} ;
+  background-color: ${colors.cardTitle};
   text-align: center;
   box-sizing: border-box;
   height: 55px;
@@ -144,9 +148,9 @@ export const LinkContainer = styled(motion.div)`
 `;
 
 export const MediumLinkOption = styled.a`
-  color: ${colors.white};
+  color: ${colors.textColor};
   text-decoration: none;
-  background-color: ${colors.red};
+  background-color: ${colors.primary};
   font-weight: bold;
   text-align: center;
   font-size: 16px;
@@ -157,7 +161,7 @@ export const MediumLinkOption = styled.a`
 `;
 
 export const ContentDetailOption = styled(motion.span)`
-  background-color: ${colors.detailBlack};
+  background-color: ${colors.cardDetail};
   font-weight: bold;
   font-size: 16px;
   text-align: center;
@@ -172,7 +176,7 @@ export const CardOpenLink = styled(Link)`
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: ${colors.white};
+  color: ${colors.textColor};
   display: inline-block;
 `;
 
@@ -198,20 +202,20 @@ export const DetailCloseLink = styled(Link)`
   transform: translateX(-50%);
 `;
 
-export const OpenedCardContentContainer = styled.div`
-width: 100%;
-height: 100%;
-position: relative;
-display: block;
-pointer-events: none;
-top: 0;
-left: 0;
-right: 0;
-position: fixed;
-z-index: 1;
-overflow: hidden;
-padding: 120px 10px;
-box-sizing: border-box;
+export const OpenedCardContentContainer = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  padding: 120px 10px;
+  box-sizing: border-box;
 
   @media (${devices.mobileL}) {
     padding: 120px 50px;
@@ -219,40 +223,50 @@ box-sizing: border-box;
 `;
 
 export const OpenedCardContent = styled(CardContent)`
-height: auto;
-max-width: 700px;
-overflow: hidden;
-pointer-events: none;
+  height: auto;
+  max-width: 700px;
+  overflow: hidden;
+  pointer-events: none;
+
+  @media (${devices.desktop}) {
+    padding-top: 400px;
+    max-width: 900px;
+  }
 `;
 
 export const OpenedCardImageContainer = styled(CardImageContainer)`
   z-index: 1;
+  @media (${devices.desktop}) {
+    padding-top: 400px;
+        max-width: 900px; !important
+    
+      }
 `;
 
 export const OpenedTitleContainer = styled(TitleContainer)`
-top: 0px;
-left: 0px;
-font-size: 16px;
-padding: 5px 0 5px 20px;
-width: 100%;
-background-color: ${colors.openedCardBackground};
-z-index: 1;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  padding: 5px 0 5px 20px;
+  width: 100%;
+  background-color: ${colors.openedCardBackground};
+  z-index: 1;
 `;
 
 export const OpenedCardTitle = styled.h2`
-color: ${colors.white};
-margin: 8px 0;
+  color: ${colors.textColor};
+  margin: 8px 0;
 `;
 
 export const ContentContainer = styled(motion.div)`
-padding: 420px 0px 0 0;
-max-width: 700px;
+  padding: 420px 0px 0 0;
+  max-width: 700px;
 `;
 
 export const DetailOfArticle = styled.p`
   width: 100%;
-  background-color: ${colors.blue};
-  color: ${colors.white};
+  background-color: ${colors.secondary};
+  color: ${colors.textColor};
   padding: 25px;
   margin: 0;
   box-sizing: border-box;
