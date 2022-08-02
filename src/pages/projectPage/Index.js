@@ -8,6 +8,7 @@ import { buttonConstant } from "../../Constants/buttonConstants";
 import { PageContainer, GridContainer,  ButtonContainer } from "./styles";
 import {PageTitle} from "../../styles/globalStyles"
 import Scroll from "../../Components/Scroll/index";
+// import {changeSelectedKeyOfButton , changeSelectedTechnologyNamesState, clearChosenButton, filterProjects} from "./helpers"
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -108,5 +109,4 @@ const ProjectPage = () => {
     </PageContainer>
   );
 };
-
 export default ProjectPage;

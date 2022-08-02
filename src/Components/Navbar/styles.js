@@ -17,7 +17,7 @@ export const BodyStyle = styled(motion.div)`
 
 export const sidebar = {
   open: (height = 100) => ({
-    clipPath: `circle(${height * 7 }px at 40px 400px)`,
+    clipPath: `circle(${height * 11 + 100}px at 40px 400px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -44,10 +44,6 @@ export const Sidebar = styled(motion.div)`
   background-color: ${colors.mobilNavbarBackground};
   position: fixed;
 
-  @media (min-width: 550px) {
-    width: 300px;
-  }
-
   @media ${devices.laptop} {
     background-color: ${colors.primary};
     position: fixed;
@@ -59,7 +55,9 @@ export const Sidebar = styled(motion.div)`
 `;
 
 export const NavStyle = styled(motion.nav)`
-  width: 300px;
+  width: 100%;
+  height: ${(props) =>
+    props.isOpen ? "100%" : "0%"};
   padding: 0;
   margin: 0;
   display: flex;
@@ -67,9 +65,6 @@ export const NavStyle = styled(motion.nav)`
   align-items: center;
   position: fixed;
   z-index: 9999;
-  @media ${devices.laptop} {
-    width: 100%;
-  }
 `;
 
 export const ToggleIcon = styled(motion.button)`
@@ -157,7 +152,8 @@ export const LiStyle = styled(motion.li)`
     border-radius: 0px;
     opacity: 1 !important;
     transform: unset !important;
-    background-color: ${(props) => (props.selected ? colors.cardTitle : colors.primary)} !important;
+    background-color: ${(props) =>
+      props.selected ? colors.cardTitle : colors.primary} !important;
 
     &:hover {
       background-color: ${colors.secondary} !important;

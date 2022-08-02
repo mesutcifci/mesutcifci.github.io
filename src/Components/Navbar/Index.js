@@ -19,8 +19,8 @@ import { NavStyle, Sidebar, sidebar } from "./styles";
       ref={containerRef}
     >
       <Sidebar variants={sidebar} />
-      <Navigation  />
-      <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
+      <Navigation />
+      <MenuToggle toggle={() => toggleOpen()} />
     </NavStyle>
   );
 };

@@ -6,8 +6,10 @@ export const Wrapper = styled.footer`
   height: 10vh;
   color: ${colors.textColor};
   box-sizing: border-box;
-  text-align: right;
   padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
   font-size: 14px;
 `;
 

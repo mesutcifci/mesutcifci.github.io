@@ -24,7 +24,7 @@ export const GridContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
   }
   @media ${devices.desktop} {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 

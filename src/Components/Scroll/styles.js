@@ -12,7 +12,7 @@ export const Svg = styled(motion.svg)`
   right: 15px;
   padding: 0;
   margin: 0;
-  z-index: 9999;
+  z-index: 1;
   border-radius: 50%;
   background-color: #fff;
   border: 1px solid #fff;
@@ -46,10 +46,10 @@ export const ScrollIcon = styled(Svg)`
       return `
       bottom: 80px;
     @media ${devices.laptop}{
-      bottom: 85px; 
+      bottom: 110px; 
     }
     @media ${devices.laptopL}{
-      bottom: 110px; 
+      bottom: 120px; 
     }
     @media ${devices.desktop}{
       bottom: 200px; 
