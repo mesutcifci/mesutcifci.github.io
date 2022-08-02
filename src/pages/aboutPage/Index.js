@@ -15,7 +15,7 @@ import {
 const variants = {
   hover: {
     scale: 1.8,
-    color: colors.primary,
+    color: colors.secondary,
   },
 };
 

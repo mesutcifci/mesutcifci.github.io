@@ -100,15 +100,11 @@ export const UlStyle = styled(motion.ul)`
   padding: 25px;
   position: absolute;
   top: 180px;
-  width: 100%;
+  width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
-
-  @media (min-width: 550px) {
-    width: 230px;
-  }
 
   @media ${devices.laptop} {
     flex-direction: row;
@@ -117,6 +113,7 @@ export const UlStyle = styled(motion.ul)`
     top: 0px;
     padding: 0px;
     height: 65px;
+    transform: unset !important;
     background-color: ${colors.primary};
   }
 `;
@@ -147,7 +144,6 @@ export const LiStyle = styled(motion.li)`
   line-height: 50px;
   list-style: none;
   font-weight: bold;
-
   background-color: ${colors.secondary};
 
   &:hover {
@@ -169,15 +165,12 @@ export const LiStyle = styled(motion.li)`
   }
 `;
 
-
 export const IconPlaceholderStyle = styled(motion.div)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
   flex: 40px 0;
   margin-right: 20px;
-  @media ${devices.laptop} {
-  }
 `;
 
 export const RefreshStyle = styled(motion.div)`

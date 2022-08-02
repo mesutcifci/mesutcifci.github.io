@@ -33,7 +33,7 @@ export const MenuItem = ({ link, title, onClick, selected }) => {
       style={style}
       selected={selected}
       variants={variants}
-      whileHover={{ background: colors.tertiary }}
+      whileHover={{ background: colors.primary }}
       whileTap={{ scale: 0.90 }}
     >
       <NavbarLink  to={link}>{title}</NavbarLink>

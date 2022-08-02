@@ -7,6 +7,7 @@ import ProjectCard from "./ProjectCard";
 import { buttonConstant } from "../../Constants/buttonConstants";
 import { PageContainer, GridContainer,  ButtonContainer } from "./styles";
 import {PageTitle} from "../../styles/globalStyles"
+import Scroll from "../../Components/Scroll/index";
 
 const ProjectPage = () => {
   const projects = [...projectConstant];
@@ -78,6 +79,8 @@ const ProjectPage = () => {
 
   return (
     <PageContainer>
+      <Scroll scrollPoint={65} visibleLength={500} direction={"up"} />
+      <Scroll scrollPoint={99999} visibleLength={65} direction={"down"} />
       <PageTitle>My Projects</PageTitle>
       <ButtonContainer>
         <ButtonRenderer

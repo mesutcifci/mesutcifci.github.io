@@ -24,7 +24,7 @@ export const devices = {
 export const colors = {
   pageBackground: "linear-gradient(to bottom, #232526, #3a3d40)",
   primary: "#be3144",
-  secondary: "#45567d",
+  secondary: "#F68989",
   tertiary: "#2d2626",
   textColor: "#fff",
   borderColor: "#fff",

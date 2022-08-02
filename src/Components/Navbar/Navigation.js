@@ -6,9 +6,12 @@ import { navbarConstants } from "../../Constants/navbarConstants";
 const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    x: [0, 0]
+
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    x: [0, 0, -1, -300]
   },
 };
 
