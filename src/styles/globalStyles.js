@@ -40,7 +40,7 @@ export const PageTitle = styled.h1`
   display: block;
   color: ${colors.textColor};
   text-align: center;
-  margin-top: 60px;
+  margin-top: 70px;
 
 `;
 
@@ -62,5 +62,3 @@ flex: 1 1 100%;
 `;
 
 export default GlobalStyle;
-
-

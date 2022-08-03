@@ -9,14 +9,15 @@ const variants = {
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    x: [ 0, 0, -1, -700]
+    x: [0, 0, -1, -700],
   },
 };
 
-export const Navigation = () => {
+export const Navigation = ({ toggle }) => {
   const [constant, setConstant] = useState([...navbarConstants]);
   const handleClick = (event) => {
     selectedToggle(event);
+    toggle();
     scrollTop();
   };
 
@@ -45,6 +46,8 @@ export const Navigation = () => {
           onClick={handleClick}
           link={constant.navbarLinks}
           title={constant.navbarTitles}
+          viewBox={constant.viewBox}
+          icon={constant.icon}
         />
       ))}
     </UlStyle>

@@ -56,8 +56,7 @@ export const Sidebar = styled(motion.div)`
 
 export const NavStyle = styled(motion.nav)`
   width: 100%;
-  height: ${(props) =>
-    props.isOpen ? "100%" : "0%"};
+  height: ${(props) => (props.isOpen ? "100%" : "0%")};
   padding: 0;
   margin: 0;
   display: flex;
@@ -107,7 +106,7 @@ export const UlStyle = styled(motion.ul)`
     width: 100%;
     top: 0px;
     padding: 0px;
-    height: 65px;
+    height: 75px;
     transform: unset !important;
     background-color: ${colors.primary};
   }
@@ -116,11 +115,19 @@ export const UlStyle = styled(motion.ul)`
 export const NavbarLink = styled(Link)`
   text-decoration: none;
   display: inline-block;
-  color: ${colors.textColor};
+  color: white;
   width: 100%;
+  background-color: ${colors.secondary};
+  border-radius: 15px;
+  height: 60px;
+  line-height: 55px;
 
   @media ${devices.laptop} {
     padding: 20px;
+    background-color: unset;
+    border-radius: 0;
+    height: 50px;
+
   }
 `;
 
@@ -130,24 +137,19 @@ export const LiStyle = styled(motion.li)`
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 15px;
-  width: 180px;
+  width: 300px;
   height: 50px;
   text-align: center;
   flex: 1;
-  line-height: 50px;
   list-style: none;
   font-weight: bold;
-  background-color: ${colors.secondary};
-
-  &:hover {
-    background-color: ${colors.tertiary};
-  }
 
   @media ${devices.laptop} {
     line-height: 25px;
-    height: 65px;
+    height: 75px;
     margin-bottom: 0px;
     border-radius: 0px;
     opacity: 1 !important;
@@ -161,12 +163,37 @@ export const LiStyle = styled(motion.li)`
   }
 `;
 
-export const IconPlaceholderStyle = styled(motion.div)`
+export const TextPlaceholderStyle = styled(motion.div)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
   flex: 40px 0;
   margin-right: 20px;
+}`;
+export const IconPlaceholderStyle = styled(motion.svg)`
+  border-radius: 50%;
+  flex: 90px 0;
+  padding: 3px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+  background-color: ${colors.secondary};
+  border: solid 3px ${colors.secondary};
+
+  @media ${devices.laptop} {
+    display: none;
+  }
+`;
+
+export const Paths = styled(motion.path)`
+  width: 56%;
+  overflow: visible;
+  stroke: #be3144;
+  stroke-width: 35;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 `;
 
 export const RefreshStyle = styled(motion.div)`
@@ -182,6 +209,4 @@ export const RefreshStyle = styled(motion.div)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  @media ${devices.laptop} {
-  }
 `;
