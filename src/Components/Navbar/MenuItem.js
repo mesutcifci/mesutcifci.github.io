@@ -6,7 +6,6 @@ const variants = {
   open: {
     x: [0, 0],
     y: 0,
-    scale: "0.9",
     opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: -100 },
@@ -33,7 +32,7 @@ export const MenuItem = ({ link, title, onClick, selected, icon, viewBox }) => {
     },
     test: {
       pathLength: 1,
-      fill: "rgba(255, 255, 255, 0)",
+      fill: colors.primary,
     },
   };
 
@@ -42,9 +41,8 @@ export const MenuItem = ({ link, title, onClick, selected, icon, viewBox }) => {
       onClick={onClick}
       selected={selected}
       variants={variants}
-      whileTap={{ scale: 0.9 }}
     >
-      <IconPlaceholderStyle fill="white" viewBox={viewBox}>
+      <IconPlaceholderStyle  viewBox={viewBox}>
         <Paths
           d={`${icon}`}
           variants={icons}

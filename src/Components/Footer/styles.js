@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {colors} from "../../styles/globalStyles"
 
 export const Wrapper = styled.footer`
-  border-top: 3px solid ${colors.primary};
+  border-top: 3px solid ${colors.secondary};
   height: 10vh;
   color: ${colors.textColor};
   box-sizing: border-box;

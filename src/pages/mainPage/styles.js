@@ -25,7 +25,7 @@ export const MainPageH1 = styled.h1`
 `;
 
 export const MainPageP = styled(motion.p)`
-  color: ${colors.primary};
+  color: ${colors.secondary};
   font-size: 25px;
   margin: 3px;
   font-style: italic;

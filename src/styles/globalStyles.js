@@ -23,8 +23,8 @@ export const devices = {
 
 export const colors = {
   pageBackground: "linear-gradient(to bottom, #232526, #3a3d40)",
-  primary: "#be3144",
-  secondary: "#F68989",
+  primary: "#357C3C",
+  secondary: "#9EB23B",
   tertiary: "#2d2626",
   textColor: "#fff",
   borderColor: "#fff",
@@ -59,6 +59,14 @@ scroll-behavior: smooth;
 .container {
 flex: 1 1 100%;
 }
+
+@media print{
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
 `;
 
 export default GlobalStyle;

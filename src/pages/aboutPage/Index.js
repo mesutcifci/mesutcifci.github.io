@@ -25,7 +25,7 @@ const AboutPage = () => {
       <AboutMe>
         <PageTitle>Who am I?</PageTitle>
         <ProfileFigure>
-        <ProfileImg src="https://mesutcifci.github.io/images/profile.jpg" />
+        <ProfileImg src="./img/profile-img.jpg" />
 
           <ProfileP>
             Hello, I am Mesut Çiftçi, I have been working as a frontend

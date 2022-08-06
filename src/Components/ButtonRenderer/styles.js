@@ -17,7 +17,7 @@ export const ButtonContainer = styled.div`
 
 export const TechnologyButton = styled.button`
   color: ${colors.textColor};
-  background-color: ${(props) => (props.selected ? colors.primary : colors.secondary)};
+  background-color: ${(props) => (props.selected ? colors.tertiary : colors.secondary)};
   background-color: ${(props) => props.disabled && "gray"};
 
   border: 2px solid ${colors.borderColor};
@@ -26,7 +26,7 @@ export const TechnologyButton = styled.button`
   padding: 10px;
 
   &:hover {
-    background-color: ${(props) => !props.disabled && colors.tertiary};
+    background-color: ${(props) => !props.disabled && colors.primary};
     cursor: ${(props) => !props.disabled && "pointer"};
   }
 `;
