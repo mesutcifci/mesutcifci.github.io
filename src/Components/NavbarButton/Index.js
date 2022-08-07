@@ -12,7 +12,7 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
+export const NavbarButton = ({ toggle }) => (
   <ToggleIcon onClick={toggle}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path

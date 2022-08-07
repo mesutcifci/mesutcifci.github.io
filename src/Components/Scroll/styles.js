@@ -65,7 +65,6 @@ export const ScrollIcon = styled(Svg)`
       @media ${devices.desktop}{
         top: 220px; 
       }
-      
       `;
     }
   }}

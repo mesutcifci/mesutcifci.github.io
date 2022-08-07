@@ -1,27 +1,24 @@
 import * as React from "react";
 import { useRef } from "react";
 import { useCycle } from "framer-motion";
-import { useDimensions } from "./UseDimensions";
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
-import { NavStyle, Sidebar, sidebar } from "./styles";
+import { NavbarButton } from "../NavbarButton/Index";
+import { Navigation } from "../Navigation/Index";
+import { Container, Sidebar, sidebarAnimationConfigs } from "./styles";
 
  const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
 
   return (
-    <NavStyle
+    <Container
       initial={false}
       animate={isOpen ? "open" : "closed"}  
-      custom={height}
       ref={containerRef}
     >
-      <Sidebar variants={sidebar} />
+      <Sidebar variants={sidebarAnimationConfigs} />
       <Navigation toggle={() => toggleOpen()} />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </NavStyle>
+      <NavbarButton toggle={() => toggleOpen()} />
+    </Container>
   );
 };
 

@@ -1,31 +1,24 @@
 import React, { useState } from "react";
-import { MenuItem } from "./MenuItem";
-import { UlStyle } from "./styles";
+
+import { NavbarItem } from "../NavbarItem/Index";
 import { navbarConstants } from "../../Constants/navbarConstants";
-const variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    x: [0, 0],
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    x: [0, 0, -1, -700],
-  },
-};
+
+import { NavbarItems, navbarItemsAnimationConfigs } from "./styles";
 
 export const Navigation = ({ toggle }) => {
   const [constant, setConstant] = useState([...navbarConstants]);
+
   const handleClick = (event) => {
-    selectedToggle(event);
-    toggle();
     scrollTop();
+    selectNavbarItem(event);
+    toggle();
   };
 
   const scrollTop = () => {
     window.scrollTo(0, 0);
   };
 
-  const selectedToggle = (event) => {
+  const selectNavbarItem = (event) => {
     const copyConstant = [...constant];
     const selectedText = event.target.text;
 
@@ -38,9 +31,9 @@ export const Navigation = ({ toggle }) => {
   };
 
   return (
-    <UlStyle variants={variants}>
+    <NavbarItems variants={navbarItemsAnimationConfigs}>
       {constant.map((constant) => (
-        <MenuItem
+        <NavbarItem
           key={constant.id}
           selected={constant.selected}
           onClick={handleClick}
@@ -50,6 +43,6 @@ export const Navigation = ({ toggle }) => {
           icon={constant.icon}
         />
       ))}
-    </UlStyle>
+    </NavbarItems>
   );
 };

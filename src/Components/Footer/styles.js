@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "../../styles/globalStyles"
+import {fontSizes, colors} from "../../styles/globalStyles"
 
 export const Wrapper = styled.footer`
   border-top: 3px solid ${colors.secondary};
@@ -10,12 +10,16 @@ export const Wrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: end;
-  font-size: 14px;
+  font-size: ${fontSizes.xs};
 `;
 
 export const Link = styled.a`
   line-height: 50px;
   color: ${colors.textColor};
+  background-color:  ${colors.primary};
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid white;
   text-decoration: none;
 
   &:hover {

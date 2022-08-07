@@ -1,15 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   DetailCloseContainer,
-  DetailCloseLink,
-  ArticleImg,
-  OpenedCardContentContainer,
+  OpenedCardContainer,
   OpenedCardContent,
   OpenedCardImageContainer,
   OpenedTitleContainer,
-  ContentContainer,
-  DetailOfArticle,
-  OpenedCardTitle,
+  Content,
 } from "./style";
 
 export function Item({ title, id, imgSrc, explanation }) {
@@ -22,27 +20,27 @@ export function Item({ title, id, imgSrc, explanation }) {
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
       >
-        <DetailCloseLink to="/article-page" />
+        <Link className="detail-close-link" to="/article-page" />
       </DetailCloseContainer>
 
-      <OpenedCardContentContainer>
+      <OpenedCardContainer>
         <OpenedCardContent layoutId={`card-container-${id}`}>
           <OpenedCardImageContainer layoutId={`card-image-container-${id}`}>
-            <ArticleImg src={imgSrc} alt="" />
+            <img className="card-img" src={imgSrc} alt="" />
           </OpenedCardImageContainer>
 
           <OpenedTitleContainer layoutId={`title-container-${id}`}>
-            <OpenedCardTitle>{title}</OpenedCardTitle>
+            <h2 className="opened-card-title">{title}</h2>
           </OpenedTitleContainer>
 
-          <ContentContainer animate>
-            <DetailOfArticle>
+          <Content animate>
+            <p className="opened-card-description">
               Topics of this article:
-              <br /> {explanation}
-            </DetailOfArticle>
-          </ContentContainer>
+              <span>{explanation}</span>
+            </p>
+          </Content>
         </OpenedCardContent>
-      </OpenedCardContentContainer>
+      </OpenedCardContainer>
     </>
   );
 }

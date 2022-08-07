@@ -1,22 +1,22 @@
 export const contactConstants = [
     {
-        contactLink: "https://www.linkedin.com/in/mesut-cifci/",
+        contactLink: "",
         contactIcon: "fab fa-linkedin fa-2xl"
     },
     {
-        contactLink: "https://twitter.com/MesutCifci9",
+        contactLink: "",
         contactIcon: "fab fa-twitter-square fa-2xl"
     },
     {
-        contactLink: "https://github.com/mesutcifci",
+        contactLink: "",
         contactIcon: "fab fa-github fa-2xl"
     },
     {
-        contactLink: "https://stackoverflow.com/users/12382831/mesut-%c3%87ifci",
+        contactLink: "",
         contactIcon: "fab fa-stack-overflow fa-2xl"
     },
     {
-        contactLink: "https://mesutcifci.medium.com/",
+        contactLink: "",
         contactIcon: "fab fa-medium fa-2xl"
     },
 ]

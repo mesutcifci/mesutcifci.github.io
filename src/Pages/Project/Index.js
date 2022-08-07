@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
+
 import { projectConstant } from "../../Constants/projectConstant";
 import { projectButtonConstant } from "../../Constants/projectClearChosenButton";
+import { buttonConstant } from "../../Constants/buttonConstants";
+
+import Scroll from "../../Components/Scroll/index";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
 import NoticeMessage from "./NoticeMessage";
 import ProjectCard from "./ProjectCard";
-import { buttonConstant } from "../../Constants/buttonConstants";
-import { PageContainer, GridContainer,  ButtonContainer } from "./styles";
-import {PageTitle} from "../../styles/globalStyles"
-import Scroll from "../../Components/Scroll/index";
-// import {changeSelectedKeyOfButton , changeSelectedTechnologyNamesState, clearChosenButton, filterProjects} from "./helpers"
 
-const ProjectPage = () => {
-  const projects = [...projectConstant];
+import { Container, CardContainer, ButtonContainer } from "./styles";
+
+const Project = () => {
   const [selectedTechnologyNames, setSelectedTechnologyNames] = useState([]);
   const [filteredProjectConstants, setFilteredProjectConstants] = useState([]);
-  const [buttonConstantsState, setButtonConstantsState] =
-    useState(buttonConstant);
+  const [buttonConstantsState, setButtonConstantsState] = useState([
+    ...buttonConstant,
+  ]);
 
   useEffect(() => {
     changeSelectedTechnologyNamesState();
@@ -60,11 +61,11 @@ const ProjectPage = () => {
       });
       setButtonConstantsState(modifiedButtonConstants);
     }
-    setFilteredProjectConstants([...projects]);
+    setFilteredProjectConstants([...projectConstant]);
   }
 
   function filterProjects() {
-    let filteredProjects = projects.filter((project) => {
+    let filteredProjects = [...projectConstant].filter((project) => {
       let isProjectIncludesAllSelectedTechnologies = true;
 
       for (let technology of selectedTechnologyNames) {
@@ -79,10 +80,12 @@ const ProjectPage = () => {
   }
 
   return (
-    <PageContainer>
-      <Scroll scrollPoint={65} visibleLength={500} direction={"up"} />
+    <Container>
+      <Scroll scrollPoint={66} visibleLength={500} direction={"up"} />
       <Scroll scrollPoint={99999} visibleLength={65} direction={"down"} />
-      <PageTitle>My Projects</PageTitle>
+
+      <h1 className="project-heading">My Projects</h1>
+
       <ButtonContainer>
         <ButtonRenderer
           propsName={"addGrid"}
@@ -97,16 +100,16 @@ const ProjectPage = () => {
         />
       </ButtonContainer>
 
-      <GridContainer>
+      <CardContainer>
         {filteredProjectConstants.map((object) => (
           <ProjectCard key={object.title} {...object} />
         ))}
-      </GridContainer>
+      </CardContainer>
 
       {filteredProjectConstants.length === 0 && (
         <NoticeMessage filteredProject={filteredProjectConstants} />
       )}
-    </PageContainer>
+    </Container>
   );
 };
-export default ProjectPage;
+export default Project;

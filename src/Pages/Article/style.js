@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { colors, devices } from "../../styles/globalStyles";
+import { fontSizes, colors, devices } from "../../styles/globalStyles";
 
-export const PageContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding-top: 120px;
-  padding-bottom: 50px;
-`;
+  padding: 120px 20px 50px 20px;
 
-export const PageTitle = styled.h1`
-  display: block;
-  color: ${colors.textColor};
-  text-align: center;
+  .article-heading {
+    display: block;
+    color: ${colors.textColor};
+    text-align: center;
+  }
 `;
 
 export const CardContainer = styled.ul`
@@ -108,11 +107,12 @@ export const CardImageContainer = styled(motion.div)`
   overflow: hidden;
   height: 420px;
   width: 100%;
-`;
-export const ArticleImg = styled(motion.img)`
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
+
+  .card-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const TitleContainer = styled(motion.div)`
@@ -120,11 +120,28 @@ export const TitleContainer = styled(motion.div)`
   top: 313px;
   left: 0;
   width: 100%;
+
+  .card-title {
+    color: white;
+    font-size: ${fontSizes.m};
+    background-color: ${colors.cardTitle};
+    text-align: center;
+    box-sizing: border-box;
+    height: 55px;
+    width: 100%;
+    margin: -10px 0 0 0;
+    padding: 10px;
+    line-height: 38px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const Title = styled.h2`
   color: white;
-  font-size: 18px;
+  font-size: ${fontSizes.m};
   background-color: ${colors.cardTitle};
   text-align: center;
   box-sizing: border-box;
@@ -153,7 +170,7 @@ export const MediumLinkOption = styled.a`
   background-color: ${colors.primary};
   font-weight: bold;
   text-align: center;
-  font-size: 16px;
+  font-size: ${fontSizes.xs};
   border-bottom-left-radius: 10px;
   line-height: 50px;
   width: 50%;
@@ -163,7 +180,7 @@ export const MediumLinkOption = styled.a`
 export const ContentDetailOption = styled(motion.span)`
   background-color: ${colors.cardDetail};
   font-weight: bold;
-  font-size: 16px;
+  font-size: ${fontSizes.xs};
   text-align: center;
   border-bottom-right-radius: 10px;
   width: 50%;
@@ -190,25 +207,25 @@ export const DetailCloseContainer = styled(motion.div)`
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+
+  .detail-close-link {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
-export const DetailCloseLink = styled(Link)`
-  display: block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-export const OpenedCardContentContainer = styled(motion.div)`
+export const OpenedCardContainer = styled(motion.div)`
   width: 100%;
   height: 100%;
   position: relative;
   display: block;
   pointer-events: none;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   position: fixed;
@@ -217,8 +234,12 @@ export const OpenedCardContentContainer = styled(motion.div)`
   padding: 120px 10px;
   box-sizing: border-box;
 
-  @media (${devices.mobileL}) {
+  @media ${devices.mobileL}{
     padding: 120px 50px;
+  }
+
+  @media ${devices.desktop}{
+    top: 200px;
   }
 `;
 
@@ -227,50 +248,47 @@ export const OpenedCardContent = styled(CardContent)`
   max-width: 700px;
   overflow: hidden;
   pointer-events: none;
-
-  @media (${devices.desktop}) {
-    padding-top: 400px;
-    max-width: 900px;
-  }
 `;
 
 export const OpenedCardImageContainer = styled(CardImageContainer)`
   z-index: 1;
-  @media (${devices.desktop}) {
+  max-width: 700px; !important
+
+  @media ${devices.desktop} {
     padding-top: 400px;
-        max-width: 900px; !important
-    
-      }
+    max-width: 800px; !important
+  }
 `;
 
 export const OpenedTitleContainer = styled(TitleContainer)`
   top: 0px;
   left: 0px;
-  font-size: 16px;
+  font-size: ${fontSizes.xs};
   padding: 5px 0 5px 20px;
   width: 100%;
   background-color: ${colors.openedCardBackground};
   z-index: 1;
+  .opened-card-title {
+    color: ${colors.textColor};
+    margin: 8px 0;
+  }
 `;
 
-export const OpenedCardTitle = styled.h2`
-  color: ${colors.textColor};
-  margin: 8px 0;
-`;
-
-export const ContentContainer = styled(motion.div)`
+export const Content = styled(motion.div)`
   padding: 420px 0px 0 0;
   max-width: 700px;
-`;
 
-export const DetailOfArticle = styled.p`
-  width: 100%;
-  background-color: ${colors.secondary};
-  color: ${colors.textColor};
-  padding: 25px;
-  margin: 0;
-  box-sizing: border-box;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  text-align: center;
+  .opened-card-description {
+    width: 100%;
+    background-color: ${colors.secondary};
+    color: ${colors.textColor};
+    padding: 25px;
+    margin: 0;
+    box-sizing: border-box;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
 `;
