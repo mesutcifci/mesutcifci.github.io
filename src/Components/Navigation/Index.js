@@ -15,7 +15,11 @@ export const Navigation = ({ toggle }) => {
   };
 
   const scrollTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    });
   };
 
   const selectNavbarItem = (event) => {

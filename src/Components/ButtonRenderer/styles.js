@@ -4,15 +4,11 @@ import {colors} from "../../styles/globalStyles"
 export const ButtonContainer = styled.div`
   width: auto;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  ${(props) =>
-    props.propsName == "addGrid" && css `
-      grid-template-columns: repeat(3, 1fr);
-
-      @media (min-width: 600px) {
-        grid-template-columns: repeat(6, 1fr);
-      }
-    `}
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 `;
 
 export const TechnologyButton = styled.button`

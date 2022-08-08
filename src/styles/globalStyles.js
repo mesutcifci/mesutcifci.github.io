@@ -39,7 +39,8 @@ export const fontSizes = {
 export const directionColumnCenter = 
  `display: flex;
   flex-direction: column;
-  align-items: center`
+  align-items: center;
+  justify-content: center;`
 ;
 
 const GlobalStyle = createGlobalStyle`

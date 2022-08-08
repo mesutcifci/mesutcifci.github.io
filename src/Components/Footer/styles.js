@@ -15,12 +15,12 @@ export const Wrapper = styled.footer`
 
 export const Link = styled.a`
   line-height: 50px;
-  color: ${colors.textColor};
-  background-color:  ${colors.primary};
+  color: ${colors.secondary};
   padding: 10px;
   border-radius: 10px;
-  border: 3px solid white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: ${fontSizes.m};
 
   &:hover {
     cursor: pointer;

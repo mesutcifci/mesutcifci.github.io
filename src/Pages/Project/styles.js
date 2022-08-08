@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { colors, devices } from "../../styles/globalStyles";
+import { fontSizes, colors, devices,directionColumnCenter } from "../../styles/globalStyles";
 
 export const Container = styled.div`
   display: flex;
@@ -15,6 +15,13 @@ export const Container = styled.div`
     color: ${colors.textColor};
     text-align: center;
     margin-top: 70px;
+  }
+
+  .notice-message {
+    color: ${colors.textColor};
+    font-size: ${fontSizes.m};
+    margin: 20px;
+    text-align: center;
   }
 `;
 
@@ -54,7 +61,7 @@ export const Card = styled(motion.div)`
 
   .project-title{
     color: ${colors.textColor};
-    font-size: 17px;
+    font-size: ${fontSizes.s};
     background-color: ${colors.cardTitle};
     text-align: center;
     box-sizing: border-box;
@@ -89,7 +96,7 @@ export const LinkContainer = styled(motion.div)`
     background-color: ${colors.primary};
     font-weight: bold;
     text-align: center;
-    font-size: 16px;
+    font-size: ${fontSizes.xs};
     border-bottom-left-radius: 10px;
     line-height: 50px;
     width: 50%;
@@ -100,7 +107,7 @@ export const LinkContainer = styled(motion.div)`
     text-decoration: none;
     color: ${colors.textColor};
     background-color: ${colors.cardDetail};
-    font-size: 16px;
+    font-size: ${fontSizes.xs};
     font-weight: bold;
     text-align: center;
     border-bottom-right-radius: 10px;
@@ -110,18 +117,36 @@ export const LinkContainer = styled(motion.div)`
   }
 `;
 
-export const Message = styled.div`
-  color: ${colors.textColor};
-  font-size: 18px;
-  margin: 20px;
-  text-align: center;
-`;
-
 export const ButtonContainer = styled.div`
   margin: 20px;
+  ${directionColumnCenter}
 
   @media${devices.tablet} {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+
+
+  }
+`;
+
+export const ResetFilterButton = styled.button`
+  margin: 20px;
+  width: 97%;
+  height: 85%;
+  max-width: 280px;
+  color: ${colors.textColor};
+  background-color: ${(props) =>
+    props.disabled ? colors.lightGray : colors.secondary};
+  border: 2px solid ${colors.borderColor};
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+
+  &:hover {
+    background-color: ${(props) => !props.disabled && colors.primary};
+    cursor: ${(props) => !props.disabled && "pointer"};
+  }
+
+  @media${devices.tablet} {
   }
 `;

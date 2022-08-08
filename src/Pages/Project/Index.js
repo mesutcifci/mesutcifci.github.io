@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import { projectConstant } from "../../Constants/projectConstant";
-import { projectButtonConstant } from "../../Constants/projectClearChosenButton";
 import { buttonConstant } from "../../Constants/buttonConstants";
 
-import Scroll from "../../Components/Scroll/index";
 import ButtonRenderer from "../../Components/ButtonRenderer/Index";
-import NoticeMessage from "./NoticeMessage";
 import ProjectCard from "./ProjectCard";
 
-import { Container, CardContainer, ButtonContainer } from "./styles";
+import { Container, CardContainer, ButtonContainer, ResetFilterButton } from "./styles";
 
 const Project = () => {
   const [selectedTechnologyNames, setSelectedTechnologyNames] = useState([]);
@@ -26,7 +23,7 @@ const Project = () => {
     filterProjects();
   }, [selectedTechnologyNames]);
 
-  //buttonConstants has selected key, and we change them true if they have the same target technology name.
+  // buttonConstants has selected key, and we change them true if they have the same target technology name.
   function changeSelectedKeyOfButton(event) {
     let technologyName = event.target.id;
     let modifiedButtonConstants = [...buttonConstantsState];
@@ -81,23 +78,20 @@ const Project = () => {
 
   return (
     <Container>
-      <Scroll scrollPoint={66} visibleLength={500} direction={"up"} />
-      <Scroll scrollPoint={99999} visibleLength={65} direction={"down"} />
-
       <h1 className="project-heading">My Projects</h1>
 
       <ButtonContainer>
         <ButtonRenderer
-          propsName={"addGrid"}
           buttonData={buttonConstant}
           handleClickButton={changeSelectedKeyOfButton}
         />
-        <ButtonRenderer
+
+        <ResetFilterButton
+          onClick={clearChosenButton}
           disabled={selectedTechnologyNames.length === 0 && true}
-          propsName={"withoutGrid"}
-          buttonData={projectButtonConstant}
-          handleClickButton={clearChosenButton}
-        />
+        >
+          Reset Filter
+        </ResetFilterButton>
       </ButtonContainer>
 
       <CardContainer>
@@ -107,7 +101,10 @@ const Project = () => {
       </CardContainer>
 
       {filteredProjectConstants.length === 0 && (
-        <NoticeMessage filteredProject={filteredProjectConstants} />
+        <p className="notice-message">
+          According to your selections, {filteredProjectConstants.length}{" "}
+          projects were found.
+        </p>
       )}
     </Container>
   );
