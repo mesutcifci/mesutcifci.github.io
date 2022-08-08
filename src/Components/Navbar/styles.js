@@ -7,7 +7,7 @@ export const sidebarAnimationConfigs = {
     clipPath: `circle(${height * 12 + 100}px at 40px 400px)`,
     transition: {
       type: "spring",
-      stiffness: 30,
+      stiffness: 20,
       restDelta: 2,
     },
   }),
@@ -30,7 +30,6 @@ export const Sidebar = styled(motion.div)`
   z-index: 2;
   background-color: ${colors.mobileNavbarBackground};
   position: fixed;
-
   @media ${devices.laptop} {
     background-color: ${colors.primary};
     position: fixed;
@@ -38,6 +37,7 @@ export const Sidebar = styled(motion.div)`
     width: 100%;
     height: 65px;
     display: none;
+    border: 5px solid red;
   }
 `;
 

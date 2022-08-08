@@ -19,7 +19,7 @@ export const NavbarItems = styled(motion.ul)`
   margin: 0;
   padding: 25px;
   position: absolute;
-  top: 250px;
+  top: 150px;
   width: 100%;
   min-width: 200px;
   max-width: 480px;

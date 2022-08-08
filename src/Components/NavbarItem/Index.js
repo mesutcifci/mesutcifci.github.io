@@ -28,7 +28,6 @@ export const NavbarItem = ({
   icon,
   viewBox,
 }) => {
-  
   const icons = {
     hidden: {
       pathLength: 0,
@@ -45,7 +44,11 @@ export const NavbarItem = ({
   };
 
   return (
-    <ItemContainer onClick={onClick} selected={selected} variants={variants}>
+    <ItemContainer
+      onClick={onClick}
+      selected={selected}
+      variants={variants}
+    >
       <NavbarIcon viewBox={viewBox}>
         <Paths
           d={`${icon}`}
