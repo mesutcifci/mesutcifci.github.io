@@ -1,13 +1,13 @@
 import React from "react";
-import Main from "./Pages/Main/Index";
-import About from "./Pages/About/Index";
-import Project from "./Pages/Project/Index";
-import Article from "./Pages/Article/Index";
+import Main from "./Pages/Main";
+import About from "./Pages/About";
+import Project from "./Pages/Project";
+import Article from "./Pages/Article";
 import OpenedCard from "./Pages/Article/OpenedCard";
-import Navbar from "./Components/Navbar/Index";
-import Footer from "./Components/Footer/Index";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import GlobalStyle from "./styles/globalStyles";
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { AnimateSharedLayout } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Scroll from "./Components/Scroll/index";
 
@@ -16,8 +16,8 @@ function App() {
     <div className="container">
       {/* Common variables such as styles and color that apply to the entire project are in the global file. */}
       <GlobalStyle />
-      <Scroll scrollPoint={66} visibleLength={500} direction={"up"} />
-      <Scroll scrollPoint={99999} visibleLength={65} direction={"down"} />
+      <Scroll scrollPoint={66} ScrollIconAppearPoint={500} direction={"scrollUp"} />
+      <Scroll scrollPoint={99999} ScrollIconAppearPoint={65} direction={"scrollDown"} />
 
       {/* The AnimateSharedLayout component enables you to perform layout animations between different components that share a layoutId as they're added/removed. */}
       <AnimateSharedLayout>

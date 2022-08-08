@@ -8,12 +8,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding: 120px 20px 50px 20px;
+  padding: 100px 20px 50px 20px;
 
   .article-heading {
     display: block;
     color: ${colors.textColor};
     text-align: center;
+    margin-top: 70px;
   }
 `;
 

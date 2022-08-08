@@ -42,11 +42,11 @@ export const Svg = styled(motion.svg)`
 
 export const ScrollIcon = styled(Svg)`
   ${(props) => {
-    if (props.direction === "up") {
+    if (props.direction === "scrollUp") {
       return `
       bottom: 80px;
     @media ${devices.laptop}{
-      bottom: 110px; 
+      bottom: 90px; 
     }
     @media ${devices.laptopL}{
       bottom: 120px; 

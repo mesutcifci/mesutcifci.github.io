@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { NavbarItem } from "../NavbarItem/Index";
+import { NavbarItem } from "../NavbarItem";
 import { navbarConstants } from "../../Constants/navbarConstants";
 
 import { NavbarItems, navbarItemsAnimationConfigs } from "./styles";

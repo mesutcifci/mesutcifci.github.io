@@ -2,29 +2,41 @@ import React from "react";
 import { ScrollIcon } from "./styles";
 import { useEffect, useState } from "react";
 
-const Scroll = ({ scrollPoint, visibleLength, direction }) => {
+const Scroll = ({ scrollPoint, ScrollIconAppearPoint, direction }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
+      // InnerHeight:  Takes value from the height of the window's layout viewport.
+      // ScrollHeight: Returns the height of an element including padding, but excluding borders, scrollbars, or margins.
       let documentHeight = document.documentElement.scrollHeight;
       let innerHeight = window.innerHeight;
-      let condition;
+      let appearCondition = window.scrollY >= ScrollIconAppearPoint;
+      let disappearCondition;
 
-      //"Scroll Up" should always appear at the bottom of the page, but "Scroll Down" should not
-      direction == "down"
-        ? (condition = window.scrollY + 20 < documentHeight - innerHeight)
-        : (condition = true);
+      //documentHeight - innerHeight =  window.scrollY (when you scroll to the bottom of the page)
+      //With the above process, I can compare the length of the page itself and how much the user scrolls the screen.
 
-      if (window.scrollY >= visibleLength && condition) {
-        setVisible(true); 
+      direction == "scrollDown"
+        ? //Button at the top should not appear at the bottom of the page
+          //because it will be useless if the user is at bottom of page.
+          //We preferred 20px above the page break. You can change it.
+          (disappearCondition =
+            window.scrollY + 20 < documentHeight - innerHeight)
+        : //Button at the bottom should always appear at the bottom of the page,
+          //because the users wants to scroll top of page when they at bottom.
+          //we could write "window.scrollY <= documentHeight - innerHeight" despite of "true"
+          (disappearCondition = true);
+
+      if (appearCondition && disappearCondition) {
+        setVisible(true);
       } else {
         setVisible(false);
       }
     });
   }, []);
 
-  const scrollPlace = () => {
+  const scrollThisPoint = () => {
     window.scrollTo({
       top: scrollPoint,
       behavior: "smooth",
@@ -35,7 +47,7 @@ const Scroll = ({ scrollPoint, visibleLength, direction }) => {
     <>
       {visible && (
         <ScrollIcon
-          onClick={scrollPlace}
+          onClick={scrollThisPoint}
           viewBox="0 0 510 510"
           direction={direction}
         >

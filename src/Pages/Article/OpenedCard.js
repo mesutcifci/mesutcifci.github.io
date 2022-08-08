@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { articleConstant } from "../../Constants/articleConstant";
 import { useParams } from "react-router-dom";
-import ArticlePage from "./Index";
+import ArticlePage from ".";
 import { Link } from "react-router-dom";
 
 import {

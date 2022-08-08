@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useRef } from "react";
 import { useCycle } from "framer-motion";
-import { NavbarButton } from "../NavbarButton/Index";
-import { Navigation } from "../Navigation/Index";
+import { NavbarButton } from "../NavbarButton";
+import { Navigation } from "../Navigation";
 import { Container, Sidebar, sidebarAnimationConfigs } from "./styles";
 
  const Navbar = () => {
