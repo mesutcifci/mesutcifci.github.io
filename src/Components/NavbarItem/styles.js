@@ -54,6 +54,7 @@ export const ItemContainer = styled(motion.li)`
     transform: unset !important;
     background-color: ${(props) =>
       props.selected ? colors.cardTitle : colors.primary} !important;
+    transition: background-color 0.8s;
 
     &:hover {
       background-color: ${colors.secondary} !important;

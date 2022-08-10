@@ -14,7 +14,12 @@ export const Container = styled.div`
     display: block;
     color: ${colors.textColor};
     text-align: center;
-    margin-top: 70px;
+
+    margin-bottom: 30px;
+
+    @media ${devices.laptop} {
+      margin-top: 70px;
+    }
   }
 
   .notice-message {

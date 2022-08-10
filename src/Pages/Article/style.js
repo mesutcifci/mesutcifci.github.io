@@ -14,7 +14,11 @@ export const Container = styled.div`
     display: block;
     color: ${colors.textColor};
     text-align: center;
-    margin-top: 70px;
+    margin-bottom: 30px;
+
+    @media ${devices.laptop} {
+      margin-top: 70px;
+    }
   }
 `;
 
@@ -235,11 +239,11 @@ export const OpenedCardContainer = styled(motion.div)`
   padding: 120px 10px;
   box-sizing: border-box;
 
-  @media ${devices.mobileL}{
+  @media ${devices.mobileL} {
     padding: 120px 50px;
   }
 
-  @media ${devices.desktop}{
+  @media ${devices.desktop} {
     top: 200px;
   }
 `;
