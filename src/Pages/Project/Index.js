@@ -14,20 +14,18 @@ import {
 } from "./styles";
 
 const Project = () => {
-  const [selectedTechnologyNames, setSelectedTechnologyNames] = useState([]);
   const [filteredProjectConstants, setFilteredProjectConstants] = useState([]);
   const [buttonConstantsState, setButtonConstantsState] = useState([
     ...buttonConstant,
   ]);
-  let SelectedTechnologies;
+  let selectedTechnologies;
 
   useEffect(() => {
-    changeSelectedTechnologyNamesState();
     filterProjects();
     countSelectedTechnologies();
   }, [buttonConstantsState]);
 
-  // buttonConstants has selected key, and we change them true if they have the same target technology name.
+  // buttonConstants has selected key, and we change them true if they have target technology's name.
   function changeSelectedKeyOfButton(event) {
     let technologyName = event.target.id;
     let modifiedButtonConstants = [...buttonConstantsState];
@@ -39,33 +37,38 @@ const Project = () => {
     setButtonConstantsState(modifiedButtonConstants);
   }
 
-  function changeSelectedTechnologyNamesState() {
-    let temporary = [];
-    buttonConstantsState.forEach((constant) => {
-      constant.selected && temporary.push(constant.id);
-    });
-    setSelectedTechnologyNames([...temporary]);
+  function querySelectedKeys() {
+    let technologies = [];
+    for (let button of buttonConstantsState) {
+      let isSelected = button.selected;
+
+      if (isSelected) {
+        let technologyName = button.id;
+        technologies.push(technologyName);
+      }
+    }
+
+    return technologies;
   }
 
   function countSelectedTechnologies() {
-    SelectedTechnologies = [];
+    selectedTechnologies = [];
     buttonConstantsState.forEach((constant) => {
-      constant.selected && SelectedTechnologies.push(constant.id);
+      constant.selected && selectedTechnologies.push(constant.id);
     });
-    console.log("SelectedTechnologies Test: ", SelectedTechnologies);
+
+    return selectedTechnologies.length === 0 ? true : false;
   }
 
   //Clear chosen button and change color with the default color.
   function clearChosenButton() {
     let modifiedButtonConstants = [...buttonConstantsState];
+    let queriedTechnologies = querySelectedKeys();
 
-    for (let button of buttonConstantsState) {
-      let isSelected = button.selected;
-      let technologyName = button.id;
-
+    for (let technology of queriedTechnologies) {
       modifiedButtonConstants.forEach((constant) => {
-        if (isSelected) {
-          constant.id === technologyName && (constant.selected = !constant.selected);
+        if (constant.id === technology) {
+          constant.selected = !constant.selected;
         }
       });
       setButtonConstantsState(modifiedButtonConstants);
@@ -75,19 +78,16 @@ const Project = () => {
 
   function filterProjects() {
     let filteredProjects = [...projectConstant].filter((project) => {
+      
       let isProjectIncludesAllSelectedTechnologies = true;
+      let queriedTechnologies = querySelectedKeys();
 
-      for (let button of buttonConstantsState) {
-        let isSelected = button.selected;
-        let technologyName = button.id;
-
-        if (isSelected) {
-          !project.technologies.includes(technologyName) &&
-            (isProjectIncludesAllSelectedTechnologies = false);
-          continue;
+      for (let technology of queriedTechnologies) {
+        if (!project.technologies.includes(technology)) {
+          isProjectIncludesAllSelectedTechnologies = false;
+          break;
         }
       }
-
       return isProjectIncludesAllSelectedTechnologies;
     });
     setFilteredProjectConstants([...filteredProjects]);
@@ -105,7 +105,7 @@ const Project = () => {
 
         <ResetFilterButton
           onClick={clearChosenButton}
-          disabled={selectedTechnologyNames.length === 0 && true}
+          disabled={countSelectedTechnologies()}
         >
           Reset Filter
         </ResetFilterButton>
