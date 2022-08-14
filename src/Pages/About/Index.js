@@ -2,7 +2,6 @@ import React from "react";
 import { name, surname, Avatar } from "react-lorem-ipsum";
 
 import { contactConstants } from "../../Constants/contactConstants";
-import { personConstant } from "../../Constants/personConstant";
 import { colors } from "../../styles/globalStyles";
 
 import {
@@ -25,10 +24,10 @@ const About = () => {
     <Container>
       <h1 className="about-heading">Who am I?</h1>
       <Wrapper>
-        <Avatar gender="female" className="about-img" />
+        <Avatar src="https://avatars.githubusercontent.com/u/60754639?v=4" className="about-img" />
 
         <AboutMe>
-          {personConstant[3]}
+          Mesut Çiftçi
         </AboutMe>
       </Wrapper>
 

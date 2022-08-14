@@ -5,14 +5,14 @@ export const projectConstant = [
     previewLink:
       "https://mesutcifci.github.io/restaurant-site-with-bootstrap5/build/index.html#",
     codeLink: "https://github.com/mesutcifci/restaurant-site-with-bootstrap5",
-    technologies: ["react"],
+    technologies: ["javascript", "css", "bootstrap"],
   },
   {
     title: "AJAX Example With Numbers API",
     imgSrc: "./img/numbersAPI.png",
     previewLink: "http://plnkr.co/plunk/AXzd75YqJ9T3HxZe",
     codeLink: "https://github.com/mesutcifci/AJAX-Example-With-Numbers-API",
-    technologies: ["javascript", "react"],
+    technologies: ["javascript", "api", "css"],
   },
   {
     title: "Chat App CSS Illustration",
@@ -21,7 +21,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/chat-app-css-illustration-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/chat-app-css-illustration-master",
-    technologies: ["javascript", "ant-design"],
+    technologies: ["scss"],
   },
   {
     title: "Static Job Listings With Json",
@@ -30,7 +30,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/static-job-listings-with-json/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/static-job-listings-with-json",
-    technologies: ["javascript"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Static Job Listings With Data Attributes",
@@ -39,7 +39,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/static-job-listings-with-data-attributes/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/static-job-listings-with-data-attributes",
-    technologies: ["javascript"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Manage Landing Page",
@@ -48,7 +48,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/manage-landing-page-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/manage-landing-page-master",
-    technologies: ["javascript"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Fylo Dark Theme Landing Page",
@@ -57,7 +57,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/fylo-dark-theme-landing-page-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/fylo-dark-theme-landing-page-master",
-    technologies: ["javascript"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Project Tracking Intro Component",
@@ -66,7 +66,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/intro-component-with-signup-form-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/project-tracking-intro-component-master",
-    technologies: ["javascript"],
+    technologies: ["javascript", "scss", "bootstrap"],
   },
   {
     title: "Ping Coming Soon Page",
@@ -75,7 +75,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/ping-coming-soon-page-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/ping-coming-soon-page-master",
-    technologies: ["javascript", "css"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Huddle Landing Page",
@@ -84,7 +84,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/huddle-landing-page-with-single-introductory-section-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/huddle-landing-page-with-single-introductory-section-master",
-    technologies: ["javascript", "css"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Four Card Feature Section",
@@ -93,7 +93,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/four-card-feature-section-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/four-card-feature-section-master",
-    technologies: ["css"],
+    technologies: ["scss", "js"],
   },
   {
     title: "Coding Bootcamp Testimonials Slider",
@@ -120,7 +120,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/base-apparel-coming-soon-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/base-apparel-coming-soon-master",
-    technologies: ["javascript", "css"],
+    technologies: ["javascript", "scss"],
   },
   {
     title: "Social Proof Section",
@@ -129,7 +129,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/social-proof-section-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/social-proof-section-master",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Fylo Data Storage Component",
@@ -138,7 +138,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/fylo-data-storage-component-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/fylo-data-storage-component-master",
-    technologies: ["javascript", "css"],
+    technologies: ["css"],
   },
   {
     title: "Frontend Mentor - Single Price Grid Component",
@@ -147,7 +147,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/single-price-grid-component-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/single-price-grid-component-master",
-    technologies: ["javascript", "css"],
+    technologies: ["scss"],
   },
   {
     title: "Google Homepage Clone",
@@ -164,7 +164,7 @@ export const projectConstant = [
       "https://mesutcifci.github.io/Frontend-Mentor-Challenges/article-preview-component-master/index.html",
     codeLink:
       "https://github.com/mesutcifci/Frontend-Mentor-Challenges/tree/master/article-preview-component-master",
-    technologies: ["css"],
+    technologies: ["css", "js"],
   },
   {
     title: "Profile Card Component",
