@@ -21,7 +21,7 @@ const Main = () => {
       <Container>
         <WelcomeContainer>
           <h1 className="main-heading">
-            Welcome! <span>{personConstant[2]}</span>
+            Welcome! <span>Mesut Çiftçi</span>
           </h1>
 
           <Description variants={variants} initial="hidden" animate="visible">

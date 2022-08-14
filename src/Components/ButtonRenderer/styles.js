@@ -7,7 +7,7 @@ export const ButtonContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 `;
 
