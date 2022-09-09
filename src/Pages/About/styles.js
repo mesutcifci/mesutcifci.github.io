@@ -45,6 +45,16 @@ export const AboutMe = styled.p`
   color: ${colors.textColor};
   line-height: 30px;
   margin-top: 20px;
+
+  a {
+    color: ${colors.secondary};
+    font-weight: 600;
+  }
+
+  a:hover {
+    color: ${colors.textColor}
+  }
+
 `;
 
 export const ContactContainer = styled.div`

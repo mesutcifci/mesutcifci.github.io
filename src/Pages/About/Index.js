@@ -24,10 +24,17 @@ const About = () => {
     <Container>
       <h1 className="about-heading">Who am I?</h1>
       <Wrapper>
-        <Avatar src="https://avatars.githubusercontent.com/u/60754639?v=4" className="about-img" />
+        <Avatar
+          src="https://avatars.githubusercontent.com/u/60754639?v=4"
+          className="about-img"
+        />
 
         <AboutMe>
-          Mesut Çiftçi
+          I am a frontend developer with 1.5 years of professional experience. I
+          previously worked at <a href="https://www.patika.dev/about">patika.dev</a> and 
+          <a href="https://radity.com/en/"> Radity</a>. I developed personal and professional projects
+          with Vanilla JS, React JS, CSS, SCSS, Bootstrap, Material UI, GraphQL
+          and git technologies.
         </AboutMe>
       </Wrapper>
 

@@ -12,7 +12,6 @@ export const Container = styled.div`
   .main-heading {
     font-size: ${fontSizes.xxl};
     display: flex;
-    flex-direction: column;
     align-items: center;
     line-height: 55px;
     font-family: "Lato", sans-serif;
