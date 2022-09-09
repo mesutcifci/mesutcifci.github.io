@@ -33,7 +33,7 @@ const About = () => {
           I am a frontend developer with 1.5 years of professional experience. I
           previously worked at <a href="https://www.patika.dev/about">patika.dev</a> and 
           <a href="https://radity.com/en/"> Radity</a>. I developed personal and professional projects
-          with Vanilla JS, React JS, CSS, SCSS, Bootstrap, Material UI, GraphQL
+          with Vanilla JS, React JS, Styled Components, CSS, SCSS, Bootstrap, Material UI, GraphQL
           and git technologies.
         </AboutMe>
       </Wrapper>
