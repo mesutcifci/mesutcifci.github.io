@@ -29,11 +29,9 @@ export const Wrapper = styled.figure`
 
     @media (${devices.tablet}) {
       display: initial;
-      &:hover {
-        border: 3px solid ${colors.primary};
-      }
     }
   }
+
   @media (${devices.tablet}) {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -52,9 +50,8 @@ export const AboutMe = styled.p`
   }
 
   a:hover {
-    color: ${colors.textColor}
+    color: ${colors.textColor};
   }
-
 `;
 
 export const ContactContainer = styled.div`

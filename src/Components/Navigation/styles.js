@@ -14,26 +14,37 @@ export const navbarItemsAnimationConfigs = {
   },
 };
 
+export const NavbarItemsWrapper = styled.div`
+  width: 100%;
+  @media ${devices.laptop} {
+    height: 60px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+`;
+
 export const NavbarItems = styled(motion.ul)`
   margin: 0;
-  padding: 25px;
+  padding: 0px;
   position: absolute;
   top: 150px;
   width: 100%;
-  min-width: 200px;
-  max-width: 480px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
 
   @media ${devices.laptop} {
+    position: static;
     flex-direction: row;
     justify-content: space-between;
     transform: unset !important;
-    padding: 10px 25px;
-    top: 10px;
-    right: 10px;
+    padding: 0px 25px;
+    width: 400px;
   }
 `;
 

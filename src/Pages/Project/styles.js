@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { fontSizes, colors, devices,directionColumnCenter } from "../../styles/globalStyles";
+import {
+  fontSizes,
+  colors,
+  devices,
+  directionColumnCenter,
+} from "../../styles/globalStyles";
 
 export const Container = styled.div`
   display: flex;
@@ -64,7 +69,7 @@ export const Card = styled(motion.div)`
     box-sizing: border-box;
   }
 
-  .project-title{
+  .project-title {
     color: ${colors.textColor};
     font-size: ${fontSizes.s};
     background-color: ${colors.cardTitle};
@@ -95,7 +100,7 @@ export const LinkContainer = styled(motion.div)`
   border-bottom-left-radius: 10px;
   box-sizing: border-box;
 
-  .preview-link{
+  .preview-link {
     color: white;
     text-decoration: none;
     background-color: ${colors.primary};
@@ -108,7 +113,7 @@ export const LinkContainer = styled(motion.div)`
     height: 100%;
   }
 
-  .project-code-link{
+  .project-code-link {
     text-decoration: none;
     color: ${colors.textColor};
     background-color: ${colors.cardDetail};
@@ -126,11 +131,9 @@ export const ButtonContainer = styled.div`
   margin: 20px;
   ${directionColumnCenter}
 
-  @media${devices.tablet} {
+  @media ${devices.tablet} {
     display: grid;
     grid-template-columns: 6fr 1fr;
-
-
   }
 `;
 
@@ -150,8 +153,5 @@ export const ResetFilterButton = styled.button`
   &:hover {
     background-color: ${(props) => !props.disabled && colors.primary};
     cursor: ${(props) => !props.disabled && "pointer"};
-  }
-
-  @media${devices.tablet} {
   }
 `;

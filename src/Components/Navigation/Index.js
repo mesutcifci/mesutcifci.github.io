@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { NavbarItem } from "../NavbarItem";
 import { navbarConstants } from "../../Constants/navbarConstants";
 
-import { NavbarItems, navbarItemsAnimationConfigs } from "./styles";
+import {
+  NavbarItems,
+  navbarItemsAnimationConfigs,
+  NavbarItemsWrapper,
+} from "./styles";
 
 export const Navigation = ({ toggle }) => {
   const [constant, setConstant] = useState([...navbarConstants]);
@@ -35,18 +39,20 @@ export const Navigation = ({ toggle }) => {
   };
 
   return (
-    <NavbarItems variants={navbarItemsAnimationConfigs}>
-      {constant.map((constant) => (
-        <NavbarItem
-          key={constant.id}
-          selected={constant.selected}
-          onClick={handleClick}
-          link={constant.navbarLinks}
-          title={constant.navbarTitles}
-          viewBox={constant.viewBox}
-          icon={constant.icon}
-        />
-      ))}
-    </NavbarItems>
+    <NavbarItemsWrapper>
+      <NavbarItems variants={navbarItemsAnimationConfigs}>
+        {constant.map((constant) => (
+          <NavbarItem
+            key={constant.id}
+            selected={constant.selected}
+            onClick={handleClick}
+            link={constant.navbarLinks}
+            title={constant.navbarTitles}
+            viewBox={constant.viewBox}
+            icon={constant.icon}
+          />
+        ))}
+      </NavbarItems>
+    </NavbarItemsWrapper>
   );
 };

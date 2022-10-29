@@ -78,7 +78,6 @@ const Project = () => {
 
   function filterProjects() {
     let filteredProjects = [...projectConstant].filter((project) => {
-      
       let isProjectIncludesAllSelectedTechnologies = true;
       let queriedTechnologies = querySelectedKeys();
 
@@ -119,8 +118,8 @@ const Project = () => {
 
       {filteredProjectConstants.length === 0 && (
         <p className="notice-message">
-          According to your selections, {filteredProjectConstants.length}
-          projects were found.
+          {`According to your selections, ${filteredProjectConstants.length}
+          projects were found.`}
         </p>
       )}
     </Container>

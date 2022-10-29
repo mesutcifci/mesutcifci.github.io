@@ -11,8 +11,7 @@ const Footer = () => {
           title="Go her github"
           target="_blank"
         >
-          {" "}
-          Mesut Çiftçi{" "}
+          Mesut Çiftçi
         </Link>
         and
         <Link
@@ -20,8 +19,7 @@ const Footer = () => {
           title="Go her github"
           target="_blank"
         >
-          {" "}
-          Elif Çiftçi{" "}
+          Elif Çiftçi
         </Link>
       </p>
     </Wrapper>
