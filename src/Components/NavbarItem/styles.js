@@ -1,23 +1,47 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { fontSizes, colors, devices } from "../../styles/globalStyles";
+import { fontSizes, devices } from "../../styles/globalStyles";
 
 export const NavbarLink = styled(Link)`
   text-decoration: none;
   display: inline-block;
   color: white;
   width: 100%;
-  background-color: ${colors.secondary};
   border-radius: 15px;
   height: 55px;
   line-height: 55px;
 
   @media ${devices.laptop} {
-    padding: 20px;
-    background-color: unset;
     border-radius: 0;
-    height: 50px;
+    height: max-content;
+    line-height: normal;
+    width: max-content;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #e6dede;
+      border-radius: 50%;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 200ms linear;
+    }
+
+    &:hover {
+      color: #e6dede;
+      &:after {
+        height: 1px;
+        width: 100%;
+        transition: all 300ms linear;
+        border-bottom: 2px solid white;
+        border-radius: 2px;
+      }
+    }
   }
 `;
 
@@ -42,52 +66,15 @@ export const ItemContainer = styled(motion.li)`
   @media ${devices.mobileS} {
     font-size: ${fontSizes.lm};
   }
-  @media ${devices.mobileM} {
-  }
 
   @media ${devices.laptop} {
-    line-height: 25px;
-    height: 75px;
-    margin-bottom: 0px;
-    border-radius: 0px;
-    opacity: 1 !important;
+    background-color: unset;
     transform: unset !important;
-    background-color: ${(props) =>
-      props.selected ? colors.cardTitle : colors.primary} !important;
-    transition: background-color 0.8s;
-
-    &:hover {
-      background-color: ${colors.secondary} !important;
-    }
+    opacity: 1 !important;
+    height: max-content;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+    flex: 0;
   }
-`;
-
-export const NavbarIcon = styled(motion.svg)`
-  border-radius: 50%;
-  flex: 90px 0;
-  padding: 3px;
-  width: 60px;
-  height: 60px;
-  display: none;
-  margin-right: 20px;
-  background-color: ${colors.secondary};
-  border: solid 3px ${colors.secondary};
-
-  @media ${devices.mobileL} {
-    display: flex;
-    justify-content: center;
-  }
-
-  @media ${devices.laptop} {
-    display: none;
-  }
-`;
-
-export const Paths = styled(motion.path)`
-  width: 56%;
-  overflow: visible;
-  stroke: ${colors.primary};
-  stroke-width: 35;
-  stroke-linejoin: round;
-  stroke-linecap: round;
 `;

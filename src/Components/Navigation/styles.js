@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { colors, devices } from "../../styles/globalStyles";
- 
 
 export const navbarItemsAnimationConfigs = {
   open: {
@@ -30,14 +29,11 @@ export const NavbarItems = styled(motion.ul)`
 
   @media ${devices.laptop} {
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-    top: 0px;
-    padding: 0px;
-    height: 75px;
+    justify-content: space-between;
     transform: unset !important;
-    background-color: ${colors.primary};
+    padding: 10px 25px;
+    top: 10px;
+    right: 10px;
   }
 `;
 
@@ -50,11 +46,11 @@ export const NavbarLink = styled(Link)`
   border-radius: 15px;
   height: 55px;
   line-height: 55px;
-  
+
   @media ${devices.laptop} {
-    padding: 20px;
     background-color: unset;
     border-radius: 0;
-    height: 50px;
+    line-height: 10px;
+    width: max-content;
   }
 `;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ItemContainer, NavbarLink, NavbarIcon, Paths } from "./styles";
+import { ItemContainer, NavbarLink } from "./styles";
 
 const variants = {
   open: {
@@ -20,43 +20,9 @@ const variants = {
   },
 };
 
-export const NavbarItem = ({
-  link,
-  title,
-  onClick,
-  selected,
-  icon,
-  viewBox,
-}) => {
-  const icons = {
-    hidden: {
-      pathLength: 0,
-      fill: "rgba(255, 255, 255, 0)",
-    },
-    visible: {
-      pathLength: 1,
-      fill: "rgba(255, 255, 255, 1)",
-      transition: {
-        default: { delay: 1.4, duration: 1, ease: "easeInOut" },
-        fill: { duration: 1, ease: [1, 0, 0.8, 1] },
-      },
-    },
-  };
-
+export const NavbarItem = ({ link, title, onClick, selected }) => {
   return (
-    <ItemContainer
-      onClick={onClick}
-      selected={selected}
-      variants={variants}
-    >
-      <NavbarIcon viewBox={viewBox}>
-        <Paths
-          d={`${icon}`}
-          variants={icons}
-          initial="hidden"
-          animate="visible"
-        />
-      </NavbarIcon>
+    <ItemContainer onClick={onClick} selected={selected} variants={variants}>
       <NavbarLink to={link}>{title}</NavbarLink>
     </ItemContainer>
   );

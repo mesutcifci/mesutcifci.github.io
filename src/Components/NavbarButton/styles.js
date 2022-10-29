@@ -18,6 +18,5 @@ export const ToggleIcon = styled(motion.button)`
     display: none;
     width: 0px;
     height: 0px;
-    position: static;
   }
 `;

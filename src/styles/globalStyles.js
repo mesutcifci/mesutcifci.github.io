@@ -11,13 +11,13 @@ export const devices = {
 };
 
 export const colors = {
-  pageBackground: "linear-gradient(to bottom, #232526, #3a3d40)",
+  pageBackground: "#000000",
   primary: "#01411C",
   secondary: "#6B8E23",
   tertiary: "#2d2626",
   textColor: "#fff",
   borderColor: "#fff",
-  mobileNavbarBackground: "#fff",
+  mobileNavbarBackground: "#6B8E23",
   gray: "#303841",
   darkGray: "#2e2727",
   lightGray: "#808080",
@@ -36,12 +36,10 @@ export const fontSizes = {
   xxl: "40px",
 };
 
-export const directionColumnCenter = 
- `display: flex;
+export const directionColumnCenter = `display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;`
-;
+  justify-content: center;`;
 
 const GlobalStyle = createGlobalStyle`
 body {
