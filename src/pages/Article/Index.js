@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { articleConstant } from "../../Constants/articleConstant";
+import { articleConstant } from "../../constants/articleConstant";
 import { Container, CardContainer } from "./style";
 
 function Article({ selectedId }) {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import { projectConstant } from "../../Constants/projectConstant";
-import { buttonConstant } from "../../Constants/buttonConstants";
+import { projectConstant } from "../../constants/projectConstant";
+import { buttonConstant } from "../../constants/buttonConstants";
 
-import ButtonRenderer from "../../Components/ButtonRenderer";
+import ButtonRenderer from "../../components/ButtonRenderer";
 import ProjectCard from "./ProjectCard";
 
 import {

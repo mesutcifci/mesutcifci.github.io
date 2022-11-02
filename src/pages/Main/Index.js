@@ -1,6 +1,6 @@
 import React from "react";
 
-import { personConstant } from "../../Constants/personConstant";
+import { personConstant } from "../../constants/personConstant";
 import { Container, WelcomeContainer, Description } from "./styles";
 
 const variants = {
@@ -20,9 +20,7 @@ const Main = () => {
     <>
       <Container>
         <WelcomeContainer>
-          <h1 className="main-heading">
-            Welcome! I am Mesut Çiftçi.
-          </h1>
+          <h1 className="main-heading">Welcome! I am Mesut Çiftçi.</h1>
 
           <Description variants={variants} initial="hidden" animate="visible">
             a front-end developer

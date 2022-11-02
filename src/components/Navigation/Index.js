@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { NavbarItem } from "../NavbarItem";
-import { navbarConstants } from "../../Constants/navbarConstants";
+import { navbarConstants } from "../../constants/navbarConstants";
 
 import {
   NavbarItems,

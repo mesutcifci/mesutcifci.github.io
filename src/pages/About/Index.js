@@ -1,7 +1,7 @@
 import React from "react";
 import { name, surname, Avatar } from "react-lorem-ipsum";
 
-import { contactConstants } from "../../Constants/contactConstants";
+import { contactConstants } from "../../constants/contactConstants";
 import { colors } from "../../styles/globalStyles";
 
 import {
@@ -31,10 +31,11 @@ const About = () => {
 
         <AboutMe>
           I am a frontend developer with 1.5 years of professional experience. I
-          previously worked at <a href="https://www.patika.dev/about">patika.dev</a> and 
-          <a href="https://radity.com/en/"> Radity</a>. I developed personal and professional projects
-          with Vanilla JS, React JS, Styled Components, CSS, SCSS, Bootstrap, Material UI, GraphQL
-          and git technologies.
+          previously worked at{" "}
+          <a href="https://www.patika.dev/about">patika.dev</a> and
+          <a href="https://radity.com/en/"> Radity</a>. I developed personal and
+          professional projects with Vanilla JS, React JS, Styled components,
+          CSS, SCSS, Bootstrap, Material UI, GraphQL and git technologies.
         </AboutMe>
       </Wrapper>
 
