@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import {colors} from "../../styles/globalStyles"
+import { colors } from "../../styles/globalStyles";
 
 export const ButtonContainer = styled.div`
   width: auto;
@@ -7,13 +7,14 @@ export const ButtonContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 export const TechnologyButton = styled.button`
   color: ${colors.textColor};
-  background-color: ${(props) => (props.selected ? colors.tertiary : colors.secondary)};
+  background-color: ${(props) =>
+    props.selected ? colors.tertiary : colors.secondary} !important;
   background-color: ${(props) => props.disabled && "gray"};
 
   border: 2px solid ${colors.borderColor};
