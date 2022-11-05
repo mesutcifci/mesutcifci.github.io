@@ -1,5 +1,12 @@
 export const projectConstant = [
   {
+    title: "TODO APP",
+    imgSrc: "./img/react-todo-app.png",
+    previewLink: "https://react-todo-app-dev.netlify.app/",
+    codeLink: "https://github.com/mesutcifci/React-Projects/tree/main/todo-app",
+    technologies: ["react-js"],
+  },
+  {
     title: "Paint Calculator",
     imgSrc: "./img/paint-calculator.png",
     previewLink: "https://paint-calculator-app.netlify.app/",
