@@ -34,8 +34,9 @@ const About = () => {
           previously worked at{" "}
           <a href="https://www.patika.dev/about">patika.dev</a> and
           <a href="https://radity.com/en/"> Radity</a>. I developed personal and
-          professional projects with Vanilla JS, React JS, Styled components,
-          CSS, SCSS, Bootstrap, Material UI, GraphQL and git technologies.
+          professional projects with JavaScript, TypeScript, ReactJS, React
+          Context API, styled components, React testing library, Jest, CSS,
+          Bootstrap, Material UI, and Apollo GraphQL.
         </AboutMe>
       </Wrapper>
 
