@@ -25,7 +25,7 @@ export const projectConstant = [
   {
     title: "AJAX Example With Numbers API",
     imgSrc: "./img/numbersAPI.png",
-    previewLink: "http://plnkr.co/plunk/AXzd75YqJ9T3HxZe",
+    previewLink: "",
     codeLink: "https://github.com/mesutcifci/AJAX-Example-With-Numbers-API",
     technologies: ["javascript", "css"],
   },

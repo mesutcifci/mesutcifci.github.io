@@ -8,7 +8,13 @@ const ProjectCard = ({ imgSrc, title, previewLink, codeLink }) => {
         {title}
       </h2>
       <LinkContainer>
-        <a className="preview-link" href={previewLink} target="_blank">
+        <a
+          className={`preview-link ${
+            previewLink.length === 0 && "disabled-link"
+          }`}
+          href={previewLink}
+          target="_blank"
+        >
           Preview
         </a>
         <a className="project-code-link" href={codeLink} target="_blank">

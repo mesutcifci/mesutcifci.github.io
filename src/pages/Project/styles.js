@@ -113,6 +113,11 @@ export const LinkContainer = styled(motion.div)`
     height: 100%;
   }
 
+  .disabled-link {
+    pointer-events: none;
+    background-color: gray;
+  }
+
   .project-code-link {
     text-decoration: none;
     color: ${colors.textColor};
