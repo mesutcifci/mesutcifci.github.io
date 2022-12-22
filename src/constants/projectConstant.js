@@ -7,14 +7,6 @@ export const projectConstant = [
     technologies: ["react-js"],
   },
   {
-    title: "Paint Calculator",
-    imgSrc: "./img/paint-calculator.png",
-    previewLink: "https://paint-calculator-app.netlify.app/",
-    codeLink:
-      "https://github.com/mesutcifci/React-Projects/tree/main/paint-calculator",
-    technologies: ["react-js"],
-  },
-  {
     title: "Restaurant Site With Bootstrap5",
     imgSrc: "./img/messium.png",
     previewLink:
