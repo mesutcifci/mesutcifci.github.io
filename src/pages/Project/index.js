@@ -14,82 +14,58 @@ import {
 } from "./styles";
 
 const Project = () => {
-  const [filteredProjectConstants, setFilteredProjectConstants] = useState([]);
-  const [buttonConstantsState, setButtonConstantsState] = useState([
-    ...buttonConstant,
-  ]);
+  const [filteredProjects, setFilteredProjects] = useState([]);
+  const [buttonsData, setButtonsData] = useState(buttonConstant);
   let selectedTechnologies;
 
   useEffect(() => {
     filterProjects();
     countSelectedTechnologies();
-  }, [buttonConstantsState]);
+  }, [buttonsData]);
 
   // buttonConstants has selected key, and we change them true if they have target technology's name.
   function changeSelectedKeyOfButton(event) {
     let technologyName = event.target.id;
-    let modifiedButtonConstants = [...buttonConstantsState];
-    modifiedButtonConstants.forEach((constant) => {
+    let copyButtonData = [...buttonsData];
+    copyButtonData.forEach((constant) => {
       if (constant.id === technologyName) {
         constant.selected = !constant.selected;
+      } else {
+        constant.selected = false;
       }
     });
-    setButtonConstantsState(modifiedButtonConstants);
-  }
-
-  function querySelectedKeys() {
-    let technologies = [];
-    for (let button of buttonConstantsState) {
-      let isSelected = button.selected;
-
-      if (isSelected) {
-        let technologyName = button.id;
-        technologies.push(technologyName);
-      }
-    }
-
-    return technologies;
+    setButtonsData(copyButtonData);
   }
 
   function countSelectedTechnologies() {
     selectedTechnologies = [];
-    buttonConstantsState.forEach((constant) => {
+    buttonsData.forEach((constant) => {
       constant.selected && selectedTechnologies.push(constant.id);
     });
 
-    return selectedTechnologies.length === 0 ? true : false;
+    return selectedTechnologies.length === 0;
   }
 
   //Clear chosen button and change color with the default color.
   function clearChosenButton() {
-    let modifiedButtonConstants = [...buttonConstantsState];
-    let queriedTechnologies = querySelectedKeys();
+    let modifiedButtonConstants = [...buttonsData];
 
-    for (let technology of queriedTechnologies) {
-      modifiedButtonConstants.forEach((constant) => {
-        if (constant.id === technology) {
-          constant.selected = !constant.selected;
-        }
-      });
-      setButtonConstantsState(modifiedButtonConstants);
-    }
-    setFilteredProjectConstants([...projectConstant]);
+    modifiedButtonConstants.forEach((item) => (item.selected = false));
+
+    setButtonsData(modifiedButtonConstants);
   }
 
   function filterProjects() {
-    let filteredProjects = [...projectConstant].filter((project) => {
-      let isProjectIncludesAllSelectedTechnologies = true;
-      let queriedTechnologies = querySelectedKeys();
+    const selectedTech = buttonsData.find((data) => data.selected === true);
 
-      for (let technology of queriedTechnologies) {
-        if (!project.technologies.includes(technology)) {
-          isProjectIncludesAllSelectedTechnologies = false;
-          break;
-        }
-      }
-      return isProjectIncludesAllSelectedTechnologies;
-    });
-    setFilteredProjectConstants([...filteredProjects]);
+    if (selectedTech) {
+      let filteredProjects = projectConstant.filter(
+        (project) => project.technology === selectedTech.id
+      );
+      setFilteredProjects([...filteredProjects]);
+    } else {
+      setFilteredProjects(projectConstant);
+    }
   }
 
   return (
@@ -111,14 +87,14 @@ const Project = () => {
       </ButtonContainer>
 
       <CardContainer>
-        {filteredProjectConstants.map((object) => (
+        {filteredProjects.map((object) => (
           <ProjectCard key={object.title} {...object} />
         ))}
       </CardContainer>
 
-      {filteredProjectConstants.length === 0 && (
+      {filteredProjects.length === 0 && (
         <p className="notice-message">
-          {`According to your selections, ${filteredProjectConstants.length}
+          {`According to your selections, ${filteredProjects.length}
           projects were found.`}
         </p>
       )}
