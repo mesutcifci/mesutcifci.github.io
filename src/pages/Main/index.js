@@ -1,33 +1,16 @@
 import React from "react";
-
-import { personConstant } from "../../constants/personConstant";
-import { Container, WelcomeContainer, Description } from "./styles";
-
-const variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.4,
-    },
-  },
-};
+import About from "../../components/About";
+import Skills from "../../components/Skills";
+import Contact from "../../components/Contact";
+import { Wrapper } from "./styles";
 
 const Main = () => {
   return (
-    <>
-      <Container>
-        <WelcomeContainer>
-          <h1 className="main-heading">Welcome! I am Mesut Çiftçi.</h1>
-
-          <Description variants={variants} initial="hidden" animate="visible">
-            a front-end developer
-          </Description>
-        </WelcomeContainer>
-      </Container>
-    </>
+    <Wrapper>
+      <About />
+      <Skills />
+      <Contact />
+    </Wrapper>
   );
 };
 

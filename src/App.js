@@ -1,6 +1,5 @@
 import React from "react";
 import Main from "./pages/Main";
-import About from "./pages/About";
 import Project from "./pages/Project";
 import Article from "./pages/Article";
 import OpenedCard from "./pages/Article/OpenedCard";
@@ -38,7 +37,6 @@ function App() {
           />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/about-page" exact element={<About />} />
             <Route path="/project-page" exact element={<Project />} />
             <Route path="/article-page" exact element={<Article />} />
             <Route path="/article-page/:id" exact element={<OpenedCard />} />

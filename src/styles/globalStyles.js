@@ -36,6 +36,8 @@ export const fontSizes = {
   xxl: "40px",
 };
 
+export const pagePadding = "20px";
+
 export const directionColumnCenter = `display: flex;
   flex-direction: column;
   align-items: center;
