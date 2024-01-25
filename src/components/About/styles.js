@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const AboutMe = styled.p`
+export const AboutMe = styled.div`
   color: ${colors.textColor};
   line-height: 30px;
   margin-top: 100px;
