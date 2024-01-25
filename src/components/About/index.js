@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Container>
       <Wrapper>
-        <Avatar src="./img/profile.jpg" className="about-img" />
+        <Avatar src="./img/profile-img.jpg" className="about-img" />
 
         <AboutMe>
           <p>
